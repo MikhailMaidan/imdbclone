@@ -4,18 +4,18 @@ import viteLogo from '/vite.svg'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './App.css'
-import Header from './components/Header/head'
+import Header from '@/components/Header/Header.jsx'
 import './index.css'
 import '@/assets/styles/reset.css'
 import '@/assets/styles/base.css'
-
+// import '@assets/styles/'
 
 
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App main-container">
       <Header />
       {/* <LiveShow />
       <MostPopular />
