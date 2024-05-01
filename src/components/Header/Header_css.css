@@ -1,0 +1,172 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+.background-image {
+    position: relative;
+    background-image: url("@/assets/header/Background.png");
+    background-size: cover;
+    background-position: center;
+    height: 680px; 
+    width: 1920px; 
+    margin:0;
+    
+}
+.logo {
+    width: 170px;
+    height: 42px;
+    z-index: 2;
+    display: inline;
+}
+header {
+     position: absolute;
+     left: 50%;
+     width: 1780px;
+     height: 45px;
+     transform: translateX(-50%);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     top: 24px;
+     
+}
+
+.menu  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-right: 750px;
+    
+}
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.menu-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-top: 5px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.searching {
+    display: flex;
+    align-items: center;
+}
+
+.sign-up {
+    margin-left:20px;
+    width: 100px;
+    height: 42px;
+    background-color: #F41B3B;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    padding: 10px, 24px, 10px, 24px;
+    color: white;
+    font-weight: bolder;
+}
+
+.BDscreens {
+    position: absolute;
+    left: 70px;
+    top: 125px;
+}
+
+.welcome-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 24px;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-top: 5px;
+    line-height: 32px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.download {
+    margin-top:30px;
+}
+
+.download-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 65px;
+    font-weight: 100;
+    color: #FFFFFF;
+    line-height: 72px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.enjoy {
+    margin-top:30px;
+}
+
+.enjoy-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-top: 5px;
+    line-height: 32px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.telephone {
+    width:500px;
+    height: 62px;
+    margin-top: 35px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+}
+
+.prompt {
+    height: 62px;
+    width: 120px;
+    background-color: white;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 22px;
+    border-right: 1px solid red;
+    box-sizing: border-box; 
+}
+
+#telephone {
+    height: 62px;
+    width: 242px;
+    box-sizing: border-box; 
+    padding: 0; 
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.subscribe {
+    height: 62px;
+    background-color: #F41B3B;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    width: 138px;
+    color: white;
+    box-sizing: border-box; 
+}

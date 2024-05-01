@@ -1,9 +1,34 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import './App.css'
+import Header from './components/Header/head'
+import './index.css'
+import '@/assets/styles/reset.css'
+import '@/assets/styles/base.css'
+
+
+
+
 
 function App() {
+  return (
+    <div className="App">
+      <Header />
+      {/* <LiveShow />
+      <MostPopular />
+      <MoviesForYou />
+      <LatestBanglaMusic />
+      <Footer /> */}
+    </div>
+  );
+}
+export default App
+
+
+/*function App() {
   const [count, setCount] = useState(0)
 
   return (
@@ -30,6 +55,4 @@ function App() {
       </p>
     </>
   )
-}
-
-export default App
+}*/
