@@ -1,3 +1,39 @@
+@import url(./variables.css);
+
+/*формулы рассчета идеального пикселя для разных экранов */
+html {
+    font-size: 1px;
+
+    @media (min-width: var(--tablet-min)) {
+        font-size: calc(1vw / 7.68);
+    }
+
+    @media (min-width: var(--laptop-min)) {
+        font-size: calc(1vw / 17.28);
+    }
+
+    @media (min-width: 1728px) {
+        font-size: 1px;
+    }
+}
+
 body {
-    background-color: black;
+    background-color: var(--backgrond-grey);
+}
+
+.main-container {
+    width: 1680rem;
+    padding: 30rem 40rem;
+    margin: 0 auto;
+}
+
+.centered-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
