@@ -1,4 +1,3 @@
-import React from 'react';
 import './Header.scss'
 import Logo from '@/assets/header/Logo.png'
 import Home from "@/assets/header/Home.png"
@@ -8,7 +7,6 @@ import musicVideo from "@/assets/header/music.png"
 import liveShow from "@/assets/header/live.png"
 import comedies from "@/assets/header/comedies.png"
 import searching from "@/assets/header/Searching.png"
-//  className="background-image"
 
 const Icons = [
     {
@@ -43,11 +41,11 @@ const Icons = [
     },
 ]
 
-function Header() {
+export default function Header() {
     return (
         <div>
-            <header className='centered-flex'>
-                <div className="header-navigation centered-flex ">
+            <header className='centered-flex-between  main-container'>
+                <div className="header-navigation centered-flex-between">
                     <div className="header-navigation__logo">
                         <img src={Logo} alt='header-logo' />
                     </div>
@@ -61,24 +59,12 @@ function Header() {
                     </div>
                 </div>           
                 <div className='header-searching  centered-flex'>
-                    <img src={searching} alt="searching" className='header-searching__logo'/>
+                    <img src={searching} alt="searching" className='header-searching__icon'/>
                     <div className='header-searching__sign-up-button'>
                         Sign in
                     </div>
                 </div>
             </header> 
-            {/* <div className="BDscreens">
-                <div className="welcome"><span className="welcome-text">Welcome to BD Screens</span></div>
-                <div className="download"><span className="download-text">Download Unlimited <br /> Movies, Drama, Music Video<br /> and More Content.</span></div>
-                <div className="enjoy"><span className="enjoy-text">Enjoy exclusive Music Video popular movies and Live shows.<br /> Subscribe BD Screen now </span></div>
-                <div className="telephone">
-                    <div className="prompt ">+880</div>
-                    <div className="input "><input type="tel" id="telephone" name="telephone" placeholder="Enter mobile number" /></div>
-                    <div className="subscribe ">Subscribe</div>
-                </div>
-            </div> */}
         </div>
     );
 }
-
-export default Header

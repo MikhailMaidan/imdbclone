@@ -1,0 +1,88 @@
+.bd-screen {
+    &__welcome {
+        &-text {
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 24rem;
+            font-weight: 100;
+            color: #FFFFFF;
+            margin-top: 5rem;
+            line-height: 32rem;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    &__download {
+        max-width: 805rem;
+    }
+
+    &__download {
+        margin-top: 30rem;
+
+        &-text {
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 65rem;
+            color: #FFFFFF;
+            line-height: 72rem;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    &__enjoy {
+        margin-top: 30rem;
+        max-width: 600rem;
+
+        &-text {
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 22rem;
+            color: #FFFFFF;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    &__subscribe-form {
+        margin-top: 30rem;
+        justify-content: flex-start;
+        width: 500rem;
+        height: 62rem;
+        background-color: var(--white-text);
+        border-radius: 5px;
+        display: flex;
+
+        &-code-number,
+        &-number,
+        &-subscribe-button,
+        &-number-input {
+            width: 200rem;
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 22px;
+        }
+
+        &-code-number {
+            width: 100rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                border: .5px solid var(--red-background);
+                height: 42rem;
+                right: 0;
+            }
+        }
+
+        &-subscribe-button {
+            background-color: var(--red-background);
+            color: var(--white-text);
+        }
+    }
+}
+
+
+
+
+
+

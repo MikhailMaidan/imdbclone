@@ -1,17 +1,29 @@
-import React from 'react';
-import './BDscreen.css'
-
+import './BDscreen.scss'
+import '@/components/Header/Header.scss';
 
 function DBscreen() {
     return (
-    <section className="BDscreens">
-            <div className="welcome"><span className="welcome-text">Welcome to BD Screens</span></div>
-            <div className="download"><span className="download-text">Download Unlimited <br /> Movies, Drama, Music Video<br /> and More Content.</span></div>
-            <div className="enjoy"><span className="enjoy-text">Enjoy exclusive Music Video popular movies and Live shows.<br /> Subscribe BD Screen now </span></div>
-            <div className="telephone">
-                <div className="prompt ">+880</div>
-                <div className="input "><input type="tel" id="telephone" name="telephone" placeholder="Enter mobile number" /></div>
-                <div className="subscribe "><span className="header-searching__sign-up-button">Subscribe</span></div>
+    <section className="main-container bd-screen">
+            <div className="bd-screen__welcome">
+                <span className="bd-screen__welcome-text">Welcome to BD Screens</span>
+            </div>
+            <div className="bd-screen__download">
+                <span className="bd-screen__download-text">Download Unlimited Movies, Drama, Music Video and More Content.</span>
+            </div>
+            <div className="bd-screen__enjoy">
+                <span className="bd-screen__enjoy-text">Enjoy exclusive Music Video popular movies and Live shows. Subscribe 
+                <strong> BD Screen </strong>now</span>
+                </div>
+            <div className="bd-screen__subscribe-form">
+                <div className="bd-screen__subscribe-form-code-number centered-flex">
+                    +885
+                </div>
+                <div className="bd-screen__subscribe-form-number centered-flex">
+                    <input type="text" className="bd-screen__subscribe-form-number-input"/>
+                </div>
+                <div className="bd-screen__subscribe-form-subscribe-button centered-flex header-searching">
+                    Subscribe
+                </div>
             </div>
     </section>
     );
