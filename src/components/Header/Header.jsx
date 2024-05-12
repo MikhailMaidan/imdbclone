@@ -1,4 +1,5 @@
-import './Header.css'
+import React from 'react';
+import './Header.scss'
 import Logo from '@/assets/header/Logo.png'
 import Home from "@/assets/header/Home.png"
 import Movie from "@/assets/header/movie.png"

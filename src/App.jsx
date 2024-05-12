@@ -5,6 +5,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './App.css'
 import Header from '@/components/Header/Header.jsx'
+import BackgroundImageComponent from '@/components/BackgroundImageComponent/BackgroundImageComponent.jsx'
+import BDscreen from '@/components/BDscreen/BDscreen.jsx'
+import BlackBackGround from '@/components/BlackBackGround/BlackBackGround.jsx'
+import LiveShow from '@/components/LiveShow/LiveShow.jsx'
+import MostPopular from '@/components/MostPopular/MostPopular.jsx'
+import MoviesForYou from '@/components/MoviesForYou/MoviesForYou.jsx'
+import Bangla from '@/components/LatestBanglaMusic/Latest.jsx'
+import Footer from '@/components/Footer/Footer.jsx'
 import './index.css'
 import '@/assets/styles/reset.css'
 import '@/assets/styles/base.css'
@@ -15,13 +23,54 @@ import '@/assets/styles/base.css'
 
 function App() {
   return (
+  //   <div className="app-container">
+  //   <div className="background-container">
+  //     <BackgroundImageComponent />
+  //     <div className="overlay">
+  //       <Header />
+  //       <BDscreen />
+  //     </div>
+  //   </div>
+  //   <div className="content">
+  //     <LiveShow />
+  //     <MostPopular />
+  //     <MoviesForYou />
+  //     <Bangla />
+  //     <Footer />
+  //   </div>
+  // </div>
+
+
+
     <div className="App main-container">
+      
+      <div>
+      <BackgroundImageComponent /> 
       <Header />
-      {/* <LiveShow />
+      <BDscreen />
+      </div>
+
+      <div className='rest-program'>
+      <div className='live-show-styles'>
+        <LiveShow /> 
+      </div>
       <MostPopular />
       <MoviesForYou />
-      <LatestBanglaMusic />
-      <Footer /> */}
+      <Bangla />
+      <Footer />
+      </div>
+     
+      {/* <BlackBackGround /> 
+      
+      
+      
+    
+      
+       {/* <LiveShow />
+      
+      <MoviesForYou />
+      <LatestBanglaMusic /> */}
+      
     </div>
   );
 }

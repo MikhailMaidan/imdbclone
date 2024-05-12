@@ -1,0 +1,53 @@
+.line {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: black;
+    width: 100%
+}
+
+.grey-line {
+    border: none; /* Remove default border */
+     height: 4px; 
+     width: 100%;
+     background-color: grey;/* Adjust height to make it thicker */
+   /* Set background color to grey */
+}
+
+.footer {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.footer-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+.rights {
+    text-align: center;
+    margin-top:30px;
+}
+.rights-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-weight: 300;
+
+}
+
+.all_other_sections {
+    background-color: black;
+    display: flex;
+     justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}

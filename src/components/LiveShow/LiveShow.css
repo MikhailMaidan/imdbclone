@@ -1,0 +1,116 @@
+
+
+ .live-show {
+    margin-top: 50px;
+    margin-left: 0px;
+    height: 100px;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.live-show-note {
+    color: white;
+    height: 100%;
+}
+
+.live-show-columns {
+    height: 100%; /* Take up 100% of the parent's height */
+     width: 100%; /* Take up 100% of the parent's width */
+     position: absolute;  
+ }  
+
+ .most-popular, .movies-for-you {
+    margin-top: 50px;
+}
+
+.live-show {
+    width: 1780px;
+    height: 240px;
+    padding-top: 30px;
+}
+
+.live-show-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.live-show-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 32px;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-top: 5px;
+    line-height: 32px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.see-all-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-top: 5px;
+    line-height: 32px;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 5px;
+}
+
+.asortment {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show-description-live {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.k-pop {
+    width:126px;
+    height: 100px;
+}
+
+.info {
+    margin-left: 25px;
+    display: grid;
+    grid-template-rows: 40% 30% 30%;
+}
+
+.k-pop-live-text {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: #FFFFFF;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.watching-now {
+    font-family: 'Gilroy-Light', Times, serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: #FFFFFF;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+.live-now {
+    background-color: black; /* Set background color to black */
+     border-width: 1px; /* Adjust border width */
+     border-style: solid; /* Set border style to solid */
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red; 
+} 
