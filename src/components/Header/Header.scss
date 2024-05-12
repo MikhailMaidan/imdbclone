@@ -3,13 +3,12 @@
     gap: 40rem;
 
     &__icon {
-        width: 22rem;
-        height: 22rem;
+        width: 26rem;
+        height: 26rem;
     }
 
-    &__title,
-    &__sign-up-button {
-        font-family: 'Gilroy-Bold', sans-serif;
+    &__title {
+        font-family: 'Gilroy-SemiBold', sans-serif;
         font-size: 16rem;
         color: var(--white-text);
         font-weight: 500;
@@ -17,28 +16,24 @@
 }
 
 .header-navigation {
-    &__menu,
-    &__nav{
-        gap: 15rem;
+    &__menu {
+        gap: 12rem;
+    }
+
+    &__nav {
+        gap: 8rem;
     }
 
     &__nav {
         cursor: pointer;
     }
+
+    &__logo {
+        width: 180rem;
+        height: 100%;
+    }
 }
 
 .header-searching {
-    &__sign-up-button {
-        font-family: sans-serif;
-        min-width: 100rem;
-        height: 42rem;
-        background-color: var(--red-background);
-        border-radius: 5px;
-        font-weight: 600;
-        padding: 10px, 24px, 10px, 24px;
-        color: (----white-text);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    cursor: pointer;
 }
