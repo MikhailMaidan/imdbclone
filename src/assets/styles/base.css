@@ -1,4 +1,5 @@
 @import url(./variables.css);
+@import url(./fonts.css);
 
 /*формулы рассчета идеального пикселя для разных экранов */
 html {

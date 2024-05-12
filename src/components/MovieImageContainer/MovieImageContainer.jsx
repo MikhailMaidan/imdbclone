@@ -1,5 +1,5 @@
-import posterImagePng from '@/assets/poster-image/poster-image.png';
-import posterImageWebp from '@/assets/poster-image/poster-image.webp';
+import posterImagePng from '@/assets/images/poster-image/poster-image.png';
+import posterImageWebp from '@/assets/images/poster-image/poster-image.webp';
 import '@/components/MovieImageContainer/MovieImageContainer.scss';
 
 export default function  MovieImageContainer({ header, poster }) {

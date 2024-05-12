@@ -1,12 +1,12 @@
 import './Header.scss'
-import Logo from '@/assets/header/Logo.png'
-import Home from "@/assets/header/Home.png"
-import Movie from "@/assets/header/movie.png"
-import Drama from "@/assets/header/drama.png"
-import musicVideo from "@/assets/header/music.png"
-import liveShow from "@/assets/header/live.png"
-import comedies from "@/assets/header/comedies.png"
-import searching from "@/assets/header/Searching.png"
+import Logo from '@/assets/images/header/Logo.png'
+import Home from "@/assets/images/header/Home.png"
+import Movie from "@/assets/images/header/movie.png"
+import Drama from "@/assets/images/header/drama.png"
+import musicVideo from "@/assets/images/header/music.png"
+import liveShow from "@/assets/images/header/live.png"
+import comedies from "@/assets/images/header/comedies.png"
+import searching from "@/assets/images/header/Searching.png"
 
 const Icons = [
     {

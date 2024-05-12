@@ -1,6 +1,5 @@
-import React from 'react';
 import './Footer.scss'
-import Logo from '@/assets/header/Logo.png'
+import Logo from '@/assets/images/header/Logo.png'
 
 
 

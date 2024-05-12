@@ -1,6 +1,6 @@
 import React from 'react';
 import './BackgroundImageComponent.css'
-import backgroundImage from '@/assets/BackgroundImage/Background.png'
+import backgroundImage from '@/assets/images/BackgroundImage/Background.png'
 
 function BackgroundImage() {
     return (
