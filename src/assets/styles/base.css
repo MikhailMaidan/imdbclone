@@ -27,10 +27,16 @@ body {
     margin: 0 auto;
 }
 
-.centered-flex {
+.centered-flex-between {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.centered-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 img {
