@@ -14,20 +14,22 @@
     &__welcome {
         &-text {
             font-family: 'Gilroy-Light', Times, serif;
-            font-size: 14rem;
+            font-size: 12rem;
             font-weight: 100;
             color: #FFFFFF;
             margin-top: 5rem;
-            line-height: 32rem;
+            line-height: 12rem;
             font-weight: 600;
             text-align: center;
 
             @media (min-width: $tablet-min) {
+                line-height: 32rem;
                 font-size: 18rem;
             }
         
             @media (min-width: $laptop-min) {
                 font-size: 42rem;
+                line-height: 32rem;
             }
         }
     }
@@ -46,7 +48,7 @@
 
         &-text {
             font-family: 'Gilroy-Bold', Times, serif;
-            font-size: 24rem;
+            font-size: 14rem;
             color: #FFFFFF;
             line-height: 22rem;
             font-weight: 600;
@@ -67,12 +69,15 @@
     &__enjoy {
         margin-top: 6rem;
         padding: 5rem 40rem;
+        display: none;
 
         @media (min-width: $tablet-min) {
+            display: block;
             margin-top: 12rem;
         }
     
         @media (min-width: $laptop-min) {
+            display: block;
             margin-top: 80rem;
         }
 
