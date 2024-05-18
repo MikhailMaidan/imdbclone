@@ -2,94 +2,118 @@
 
 .header {
     padding: 10rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10rem 0;
 
     @media (min-width: $tablet-min) {
         padding: 20rem;
-    }
-
-    @media (min-width: $laptop-min) {
-        padding: 40rem;
-    }
-}
-
-.header-navigation,
-.header-searching {
-    gap: 15rem;
-
-    @media (min-width: $tablet-min) {
         gap: 20rem;
     }
 
     @media (min-width: $laptop-min) {
-        gap: 40rem;
-    }
-
-    &__icon {
-        width: 14rem;
-        height: 14rem;
-
-        @media (min-width: $tablet-min) {
-            width: 16rem;
-            height: 16rem;
-        }
-
-        @media (min-width: $laptop-min) {
-            width: 26rem;
-            height: 26rem;
-        }
-    }
-
-    &__title {
-        font-family: 'Gilroy-SemiBold', sans-serif;
-        font-size: 12rem;
-        color: var(--white-text);
-        font-weight: 500;
-
-        @media (min-width: $tablet-min) {
-            font-size: 12rem;
-        }
-
-        @media (min-width: $laptop-min) {
-            font-size: 16rem;
-        }
-    }
-}
-
-.header-navigation {
-    &__menu {
-        gap: 12rem;
-
-        @media (min-width: $tablet-min) {
-            gap: 12rem;
-        }
-    
-        @media (min-width: $laptop-min) {
-            gap: 15rem;
-        }
-    }
-
-    &__nav {
-        gap: 8rem;
-    }
-
-    &__nav {
-        cursor: pointer;
+        padding: 40rem;
+        gap: 20rem;
     }
 
     &__logo {
-        width: 100rem;
+        width: 80rem;
         height: 100%;
 
         @media (min-width: $tablet-min) {
-            width: 120rem;
+            width: 80rem;
         }
 
         @media (min-width: $laptop-min) {
             width: 180rem;
         }
     }
-}
 
-.header-searching {
-    cursor: pointer;
+    &__menu {
+        grid-column: 1/13;
+        gap: 20rem;
+        justify-self: flex-start;
+        display: flex;
+        justify-content: space-between!important;
+        width: 100%;
+
+        @media (min-width: $tablet-min) {
+            gap: 10rem;
+            grid-column: 2/8;
+            border: none;
+            justify-self: stretch;
+        }
+
+        @media (min-width: $laptop-min) {
+            gap: 15rem;
+            grid-column: 2 / 6;
+            border: none;
+            justify-self: stretch;
+        }
+
+        &-icon {
+            width: 12rem;
+            height: 12rem;
+    
+            @media (min-width: $tablet-min) {
+                width: 16rem;
+                height: 16rem;
+            }
+    
+            @media (min-width: $laptop-min) {
+                width: 26rem;
+                height: 26rem;
+            }
+        }
+
+        &-nav {
+            gap: 6rem;
+
+            @media (min-width: $tablet-min) {
+                gap: 3rem;
+            }
+    
+            @media (min-width: $laptop-min) {
+                gap: 8rem;
+            }
+        }
+
+        &-title {
+            font-family: 'Gilroy-SemiBold', sans-serif;
+            font-size: 8rem;
+            font-weight: 500;
+            color: var(--white-text);
+    
+            @media (min-width: $tablet-min) {
+                font-size: 12rem;  
+            }
+    
+            @media (min-width: $laptop-min) {
+                font-size: 16rem;
+            }
+        }
+    }
+
+
+    &__searching {
+        cursor: pointer;
+        grid-row: 1;
+        grid-column: 12 / 13;
+        width: 10rem;
+        height: 10rem;
+
+        @media (min-width: $tablet-min) {
+            grid-column: 12/13;
+            width: 14rem;
+            height: 14rem;
+        }
+
+        @media (min-width: $laptop-min) {
+            grid-column: 12/13;
+            font-size: 16rem;
+            width: 100%;
+        }
+    }
 }
