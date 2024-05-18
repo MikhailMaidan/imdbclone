@@ -6,6 +6,8 @@ import Movie from "@/assets/images/header/movie.svg"
 import Series from "@/assets/images/header/series.svg"
 import Drama from "@/assets/images/header/drama.svg"
 import Comedies from "@/assets/images/header/comedies.svg"
+import lostlogo from "@/assets/images/header/loslogo.png"
+import streamFlowLogo from "@/assets/images/header/logo-streamflow.png"
 
 const Icons = [
     {
@@ -43,7 +45,7 @@ export default function Header() {
                     <div className="header-navigation__logo">
                         <picture>
                             <source
-                                srcSet={LogoWebp}
+                                srcSet={streamFlowLogo}
                                 type="image/webp"
                             />
                             <img

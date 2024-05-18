@@ -10,10 +10,10 @@ html {
     }
 
     @media (min-width: var(--laptop-min)) {
-        font-size: calc(1vw / 17.28);
+        font-size: calc(1vw / 16.80);
     }
 
-    @media (min-width: 1728px) {
+    @media (min-width: 1680px) {
         font-size: 1px;
     }
 }
