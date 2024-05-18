@@ -40,7 +40,7 @@ const Icons = [
 export default function Header() {
     return (
         <div>
-            <header className='centered-flex-between  main-container'>
+            <header className='centered-flex-between header'>
                 <div className="header-navigation centered-flex-between">
                     <div className="header-navigation__logo">
                         <picture>

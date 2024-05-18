@@ -7,9 +7,7 @@ import MoviesForYou from '@/components/MoviesForYou/MoviesForYou.jsx'
 import Bangla from '@/components/LatestBanglaMusic/Latest.jsx'
 import Footer from '@/components/Footer/footer.jsx'
 import MovieImageContainer from '@/components/MovieImageContainer/MovieImageContainer.jsx'
-import './index.css'
-import '@/assets/styles/reset.css'
-import '@/assets/styles/base.css'
+import './App.scss'
 
 export default function App() {
   return (

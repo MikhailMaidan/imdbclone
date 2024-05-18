@@ -1,23 +1,71 @@
+@import '@/assets/styles/variables.scss';
+
+.header {
+    padding: 10rem;
+
+    @media (min-width: $tablet-min) {
+        padding: 20rem;
+    }
+
+    @media (min-width: $laptop-min) {
+        padding: 40rem;
+    }
+}
+
 .header-navigation,
 .header-searching {
-    gap: 40rem;
+    gap: 15rem;
+
+    @media (min-width: $tablet-min) {
+        gap: 20rem;
+    }
+
+    @media (min-width: $laptop-min) {
+        gap: 40rem;
+    }
 
     &__icon {
-        width: 26rem;
-        height: 26rem;
+        width: 14rem;
+        height: 14rem;
+
+        @media (min-width: $tablet-min) {
+            width: 16rem;
+            height: 16rem;
+        }
+
+        @media (min-width: $laptop-min) {
+            width: 26rem;
+            height: 26rem;
+        }
     }
 
     &__title {
         font-family: 'Gilroy-SemiBold', sans-serif;
-        font-size: 16rem;
+        font-size: 12rem;
         color: var(--white-text);
         font-weight: 500;
+
+        @media (min-width: $tablet-min) {
+            font-size: 12rem;
+        }
+
+        @media (min-width: $laptop-min) {
+            font-size: 16rem;
+        }
     }
 }
 
 .header-navigation {
     &__menu {
         gap: 12rem;
+
+        @media (min-width: $tablet-min) {
+            gap: 12rem;
+        }
+    
+        @media (min-width: $laptop-min) {
+            gap: 15rem;
+        }
     }
 
     &__nav {
@@ -29,8 +77,16 @@
     }
 
     &__logo {
-        width: 180rem;
+        width: 100rem;
         height: 100%;
+
+        @media (min-width: $tablet-min) {
+            width: 120rem;
+        }
+
+        @media (min-width: $laptop-min) {
+            width: 180rem;
+        }
     }
 }
 

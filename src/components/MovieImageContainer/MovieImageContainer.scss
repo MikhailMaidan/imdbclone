@@ -1,3 +1,5 @@
+@import '@/assets/styles/variables.scss';
+
 .image-container {
     position: relative;
     
@@ -12,6 +14,15 @@
         display: flex;
         flex-direction: column;
         z-index: 10;
-        gap: 30rem;
+        gap: 6rem;
+
+
+        @media (min-width: $tablet-min) {
+            gap: 8rem;
+        }
+    
+        @media (min-width: $laptop-min) {
+            gap: 30rem;
+        }
     }
 }
