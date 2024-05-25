@@ -17,13 +17,16 @@ async function getMovies() {
     const films = data.slice(0,9);
     console.log(films)
     LiveShowImages = films.map((movie) => {
-        const genresArray = movie.genres.map((item)=>item.genre)
+        const genresArray = movie.genres.map((item)=>item.genre);
+        const countriesArray = movie.countries.map((item) => item.country); 
         return {
             id: movie.kinopoiskId || movie.imdbId,
             name:  movie.nameRu || movie.nameOriginal,
             imageUrl: movie.posterUrlPreview,
             rating: `Rating from the Kinopoisk: ${movie.ratingKinopoisk}`,
-            genre: `Genres: ${genresArray.join(", ")}`
+            genre: `Genres: ${genresArray.join(", ")}`,
+            year: `Year: ${movie.year}`,
+            countries: `Countries: ${countriesArray.join(', ')}`,
         }
     })
 }
@@ -52,6 +55,8 @@ export default function NewLiveShow() {
                             <div><span className="assortment-card__info-title">{item.name}</span></div>
                             <div className="assortment-card__info-watches">{item.rating}</div>
                             <div className="assortment-card__info-duration">{item.genre}</div>
+                            <div className="assortment-card__info-year">{item.year}</div>
+                            <div className="assortment-card__info-countries">{item.countries}</div>
                         </div>
                     </div>
                 ))}
