@@ -8,7 +8,7 @@
     }
 
     @media (min-width: $laptop-min) {
-        margin-top: 20rem;
+                margin-top: 12vh;
     }
 
     &__welcome {
@@ -43,6 +43,8 @@
         }
     
         @media (min-width: $laptop-min) {
+            display: flex;
+            justify-content: center;
             margin-top: 80rem;
         }
 
@@ -53,6 +55,8 @@
             line-height: 22rem;
             font-weight: 600;
             text-align: center;
+            display: block;
+            width: 50%;
 
             @media (min-width: $tablet-min) {
                 line-height: 32rem;

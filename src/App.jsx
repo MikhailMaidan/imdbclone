@@ -22,8 +22,8 @@ export default function App() {
 
       {/* <LiveShow /> */}
       <NewLiveShow />
-      <NewMostPopular />
-      <NewMoviesForYou />
+      {/* <NewMostPopular />
+      <NewMoviesForYou /> */}
       
       {/* <MostPopular /> */}
       

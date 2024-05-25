@@ -6,7 +6,7 @@
     padding: 0 20rem;
     width: 100%;
     gap: 20rem;
-    margin-top: 200rem;
+    margin-bottom: 60rem;
 
     &__header {
         padding: 0 20rem;
@@ -20,8 +20,7 @@
         width: 100%;
         align-items: center;
         margin-bottom: 30rem;
-
-        
+        justify-content: space-between;
 
         .full-assortment {
             font-family: 'Gilroy-Light', Times, serif;
@@ -45,7 +44,7 @@
     &__more-options {
         display: flex;
         align-items: center;
-        
+        gap: 20rem;
     }
 
     &__assortment-list {
@@ -58,6 +57,10 @@
         display: flex;
         gap: 20rem;
         width: calc(100%/3 - 20rem);
+        border-radius: 20rem;
+        background-color: $white;
+        overflow: hidden;
+        cursor: pointer;
     }
 }
 
@@ -67,19 +70,18 @@
     gap: 20rem;
 
     &__icon {
-        width: 120rem;
+        width: 220rem;
     }
 
     &__info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
+        gap: 10rem;
         
         &-title, &-watches, &-duration {
             font-family: 'Gilroy-SemiBold', Times, serif;
-            color: #FFFFFF;
-            font-size: 16rem;
+            font-size: 22rem;
         }
     }
 }

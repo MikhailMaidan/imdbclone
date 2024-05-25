@@ -8,10 +8,6 @@ import Kapil from "@/assets/images/Live_Show/kapil.png"
 import Minions from "@/assets/images/Live_Show/minions.png"
 import {BaseFetcher} from "@/composables/fetcher/BaseFetcher.js"
 
-
-
-
-
 let LiveShowImages;
 
 async function getMovies() {
