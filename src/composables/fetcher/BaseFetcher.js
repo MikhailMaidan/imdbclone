@@ -1,5 +1,7 @@
-import {MAIN_URL, KINOPOISK_API_KEY} from "@/composables/constants/constants"
-
+import {
+    MAIN_URL, 
+    KINOPOISK_API_KEY
+} from "@/composables/constants/constants"
 
 export  class BaseFetcher {
     constructor(kinopoiskUrl) {
@@ -21,8 +23,9 @@ export  class BaseFetcher {
             .then(res => res.json())
             .then(json => {
                 if (json.items.length) {
-                    console.log(json);
                     resolve(json.items);
+                } else {
+                    reject();
                 }
             })
             .catch(err => console.log(err))
