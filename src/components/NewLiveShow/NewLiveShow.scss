@@ -5,7 +5,8 @@
 .liveshow {
     padding: 0 20rem;
     width: 100%;
-    gap: 20rem
+    gap: 20rem;
+    margin-top: 200rem;
 
     &__header {
         padding: 0 20rem;
@@ -16,9 +17,11 @@
 
     &__title {
         display: flex;
-        justify-content: space-between;
+        width: 100%;
         align-items: center;
         margin-bottom: 30rem;
+
+        
 
         .full-assortment {
             font-family: 'Gilroy-Light', Times, serif;
@@ -35,12 +38,14 @@
             color: #FFFFFF;
             line-height: 32rem;
             font-weight: 600;
+            margin-right: auto;
         }
     }
 
     &__more-options {
         display: flex;
         align-items: center;
+        
     }
 
     &__assortment-list {
@@ -68,7 +73,8 @@
     &__info {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        
         
         &-title, &-watches, &-duration {
             font-family: 'Gilroy-SemiBold', Times, serif;
