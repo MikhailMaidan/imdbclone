@@ -7,6 +7,9 @@ import MoviesForYou from '@/components/MoviesForYou/MoviesForYou.jsx'
 import Bangla from '@/components/LatestBanglaMusic/Latest.jsx'
 import Footer from '@/components/Footer/footer.jsx'
 import MovieImageContainer from '@/components/MovieImageContainer/MovieImageContainer.jsx'
+import NewLiveShow from './components/NewLiveShow/NewLiveShow.jsx'
+import NewMostPopular from './components/NewMostPopular/NewMostPopular.jsx'
+import NewMoviesForYou from './components/NewMoviesForYou/NewMoviesForYou.jsx'
 import './App.scss'
 
 export default function App() {
@@ -16,6 +19,16 @@ export default function App() {
         header={<Header />}
         poster={<BDscreen />}
       />
+
+      {/* <LiveShow /> */}
+      <NewLiveShow />
+      <NewMostPopular />
+      <NewMoviesForYou />
+      
+      {/* <MostPopular /> */}
+      
+      
+     
     </div>
   );
 }

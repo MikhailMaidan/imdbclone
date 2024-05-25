@@ -1,0 +1,225 @@
+@import '@/assets/styles/reset.scss';
+@import '@/assets/styles/base.scss';
+@import '@/assets/styles/variables.scss';
+
+
+
+.liveshow {
+    margin-top: 235rem;
+    padding-left: 40rem;
+    padding-right: 40rem;
+    width: 100%;
+
+    .most-popular-images {
+        gap: 15rem;
+    }
+
+    &__title 
+    {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+
+        .see-all-text {
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 16rem;
+            color: #FFFFFF;
+            line-height: 32rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap; /* Prevent the text from wrapping */
+             
+            
+        }
+
+        &-text {
+            font-family: 'Gilroy-Light', Times, serif;
+            
+            color: #FFFFFF;  
+            line-height: 32rem;
+            font-weight: 600;  
+
+           
+
+            @media (min-width: $tablet-min) {
+                font-size: 12rem;  
+            }
+    
+            @media (min-width: $laptop-min) {
+                font-size: 16rem;
+            }
+             @media (min-width: $laptop-xs-min) {
+                 font-size: 32rem;
+            }
+        }
+
+    }
+
+    &__assortment {
+        margin-top:25rem;
+
+        .description {
+            display: grid;
+            grid-template-columns: 40% 60%;
+
+        }
+        
+        .icon {
+            width:auto;
+            height: auto;
+        }
+        
+        .info {
+            margin-left: 25px;
+            display: grid;
+            grid-template-rows: 35% 32% 32%;
+            padding-left: 10rem;
+            
+        }
+        
+        .k-pop-live-text {
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 16px;
+            font-weight: 100;
+            color: #FFFFFF;
+            line-height: 30px;
+            font-weight: 300;
+            
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+        }
+        
+        .watching-now {
+            font-family: 'Gilroy-Light', Times, serif;
+            font-size: 14px;
+            font-weight: 100;
+            color: #FFFFFF;
+            line-height: 20px;
+            font-weight: 300;
+        }
+        
+        .live-now {
+            background-color: black; /* Set background color to black */
+             border-width: 1px; /* Adjust border width */
+             border-style: solid; /* Set border style to solid */
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            color: red; 
+        } 
+    }
+
+}
+
+// .liveshow {
+//     margin-top: 235rem;
+//     padding-left: 40rem;
+//     padding-right: 40rem;
+//     width: 100%;
+
+//     .most-popular-images {
+//         gap: 15rem;
+//     }
+
+//     &__title 
+//     {
+//         display: flex;
+//         justify-items: center;
+//         align-items: center;
+
+//         .see-all-text {
+//             font-family: 'Gilroy-Light', Times, serif;
+//             font-size: 16rem;
+//             color: #FFFFFF;
+//             line-height: 32rem;
+//             font-weight: 600;
+//             text-align: center;
+//             white-space: nowrap; /* Prevent the text from wrapping */
+             
+            
+//         }
+
+//         &-text {
+//             font-family: 'Gilroy-Light', Times, serif;
+            
+//             color: #FFFFFF;  
+//             line-height: 32rem;
+//             font-weight: 600;  
+
+           
+
+//             @media (min-width: $tablet-min) {
+//                 font-size: 12rem;  
+//             }
+    
+//             @media (min-width: $laptop-min) {
+//                 font-size: 16rem;
+//             }
+//              @media (min-width: $laptop-xs-min) {
+//                  font-size: 32rem;
+//             }
+//         }
+
+//     }
+
+//     &__assortment {
+//         margin-top:25rem;
+
+//         .description {
+//             display: grid;
+//             grid-template-columns: 40% 60%;
+
+//         }
+        
+//         .icon {
+//             width:126px;
+//             height: 100px;
+//         }
+        
+//         .info {
+//             margin-left: 25px;
+//             display: grid;
+//             grid-template-rows: 35% 32% 32%;
+//             padding-left: 10rem;
+            
+//         }
+        
+//         .k-pop-live-text {
+//             font-family: 'Gilroy-Light', Times, serif;
+//             font-size: 16px;
+//             font-weight: 100;
+//             color: #FFFFFF;
+//             line-height: 30px;
+//             font-weight: 300;
+            
+//         }
+
+//         .responsive-image {
+//             width: 100%;
+//             height: auto;
+//         }
+        
+//         .watching-now {
+//             font-family: 'Gilroy-Light', Times, serif;
+//             font-size: 14px;
+//             font-weight: 100;
+//             color: #FFFFFF;
+//             line-height: 20px;
+//             font-weight: 300;
+//         }
+        
+//         .live-now {
+//             background-color: black; /* Set background color to black */
+//              border-width: 1px; /* Adjust border width */
+//              border-style: solid; /* Set border style to solid */
+//              display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             color: red; 
+//         } 
+//     }
+
+// }

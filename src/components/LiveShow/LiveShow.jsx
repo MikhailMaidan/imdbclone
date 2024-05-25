@@ -17,12 +17,12 @@ function LiveShow() {
     //         <div></div>
     //     </div>
     //  </div>
-    <div className="">    
+    <div className="margin">    
     <div>
         <section className="live-show">
             <div className="live-show-flex">
                 <div><span className="live-show-text">Live Show</span></div>
-                <div>
+                <div className="flex-container">
                     <span className="see-all-text">See all</span>
                     <img src={arrow} alt="arrow" />
                 </div>

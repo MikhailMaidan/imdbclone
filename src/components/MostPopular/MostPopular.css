@@ -1,14 +1,15 @@
-.all_other_sections {
-    background-color: #0A070B;
-    display: flex;
-     justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
+
 
 .most-popular {
-    margin-top: 40px;
-    width: 1780px;
-    padding-top: 30px;
+    
+    position: absolute;
+    width: 100%;
+    padding-left: 40rem;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center; /* Align items vertically center */
 }
 
 .most-popular-images {

@@ -14,11 +14,11 @@ import arrow from '@/assets/images/Live_Show/arrow.png'
 
 function MostPopular() {
     return (
-        <div className="">
+       
             <div className="most-popular">
                 <div className="live-show-flex">
                     <div><span className="live-show-text">Most Popular</span></div>
-                    <div>
+                    <div className="flex-container">
                         <span className="see-all-text">See all</span>
                         <img src={arrow} alt="arrow" />
                     </div>
@@ -33,7 +33,7 @@ function MostPopular() {
                     <div><img src={vijle} alt="" /></div>
                     <div><img src={gangsta} alt="" /></div>
                 </div>
-            </div>
+            
         </div>
 
     );

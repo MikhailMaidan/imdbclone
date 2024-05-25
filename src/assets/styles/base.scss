@@ -37,8 +37,11 @@ body {
 .centered-flex {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    
 }
+
+
 
 img {
     width: 100%;
