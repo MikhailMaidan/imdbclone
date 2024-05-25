@@ -15,6 +15,11 @@
         justify-content: space-between;
     }
 
+    &__arrow-icon {
+        max-height: 30rem;
+        transform: rotate(90deg);
+    }
+
     &__title {
         display: flex;
         width: 100%;
