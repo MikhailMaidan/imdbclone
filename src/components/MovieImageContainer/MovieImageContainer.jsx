@@ -14,6 +14,7 @@ export default function  MovieImageContainer({ header, poster }) {
                 <img
                     loading="lazy"
                     src={posterImagePng}
+                    className='image-container-poster-image'
                     alt="poster-image"
                 />
             </picture>

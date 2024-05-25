@@ -2,170 +2,23 @@
 @import '@/assets/styles/base.scss';
 @import '@/assets/styles/variables.scss';
 
-// .liveshow {
-//     margin-top: 135rem;
-//     padding-left: 40rem;
-//     padding-right: 40rem;
-//     width: 100%;
-
-
-//     &__title 
-//     {
-//         display: flex;
-//         justify-items: center;
-//         align-items: center;
-
-//         .full-assortment {
-//             font-family: 'Gilroy-Light', Times, serif;
-//             font-size: 16rem;
-//             color: #FFFFFF;
-//             line-height: 32rem;
-//             font-weight: 600;
-//             text-align: center;
-//             white-space: nowrap; 
-             
-            
-//         }
-
-//         &-text {
-//             font-family: 'Gilroy-Light', Times, serif;
-//             font-size: 32rem;
-//             color: #FFFFFF;  
-//             line-height: 32rem;
-//             font-weight: 600;  
-//         }
-
-//     }
-
-//     &__assortment {
-//         margin-top:25rem;
-        
-//         width: 100%;
-//         height: 100%;
-
-
-
-//         .description {
-//             display: grid;
-//             grid-template-columns: 50% 50%;
-
-//         }
-        
-//         .info {
-            
-//             display: grid;
-//             grid-template-rows: 35% 32% 32%;
-             
-        
-        
-//         &__live-text {
-//             font-family: 'Gilroy-Light', Times, serif;
-//             font-size: 16rem;
-//             color: #FFFFFF;
-//             line-height: 30rem;
-//             font-weight: 300;
-//             white-space: nowrap;
-            
-//         }
-        
-//         &__current-data {
-//             font-family: 'Gilroy-Light', Times, serif;
-//             font-size: 14rem;
-//             font-weight: 100;
-//             color: #FFFFFF;
-//             line-height: 20rem;
-//             font-weight: 300;
-//         }
-//         }
-//     }
-
-// }
-
-
-// .liveshow {
-//     margin-top: 135rem;
-//     padding-left: 40rem;
-//     padding-right: 40rem;
-//     width: 100%;
-
-//     &__title {
-//         display: flex;
-//         justify-items: center;
-//         align-items: center;
-
-//         .full-assortment {
-//             font-family: 'Gilroy-Light', Times, serif;
-//             font-size: 16rem;
-//             color: #FFFFFF;
-//             line-height: 32rem;
-//             font-weight: 600;
-//             text-align: center;
-//             white-space: nowrap; 
-//         }
-
-//         &-text {
-//             font-family: 'Gilroy-Light', Times, serif;
-//             font-size: 32rem;
-//             color: #FFFFFF;  
-//             line-height: 32rem;
-//             font-weight: 600;  
-//         }
-//     }
-
-//     &__assortment {
-//         margin-top: 25rem;
-//         width: 100%;
-//         height: 100%;
-
-//         .description {
-//             display: grid;
-//             grid-template-columns: 1fr; 
-//             @media (min-width: 600px) {
-//                 grid-template-columns: 1fr 1fr; 
-//             }
-//         }
-
-//         .icon {
-//             width: 100%;
-//             height: auto; 
-//         }
-
-//         .info {
-//             display: grid;
-//             grid-template-rows: 35% 32% 32%;
-
-//             &__live-text {
-//                 font-family: 'Gilroy-Light', Times, serif;
-//                 font-size: 16rem;
-//                 color: #FFFFFF;
-//                 line-height: 30rem;
-//                 font-weight: 300;
-//                 white-space: nowrap;
-//             }
-
-//             &__current-data {
-//                 font-family: 'Gilroy-Light', Times, serif;
-//                 font-size: 14rem;
-//                 font-weight: 100;
-//                 color: #FFFFFF;
-//                 line-height: 20rem;
-//                 font-weight: 300;
-//             }
-//         }
-//     }
-// }
-
-
 .liveshow {
-    margin-top: 135rem;
-    padding-left: 40rem;
-    padding-right: 40rem;
+    padding: 0 20rem;
     width: 100%;
+    gap: 20rem
+
+    &__header {
+        padding: 0 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     &__title {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 30rem;
 
         .full-assortment {
             font-family: 'Gilroy-Light', Times, serif;
@@ -178,79 +31,51 @@
         }
 
         &-text {
-            font-family: 'Gilroy-Light', Times, serif;
-            font-size: 32rem;
+            font-family: 'Gilroy-Bold', Times, serif;
             color: #FFFFFF;
             line-height: 32rem;
             font-weight: 600;
         }
     }
 
-    &__assortment {
-        margin-top: 25rem;
-        width: 100%;
+    &__more-options {
+        display: flex;
+        align-items: center;
+    }
+
+    &__assortment-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px; 
+        gap: 20rem;
+    }
 
-        .description {
-            flex: 1 1 calc(50% - 20px); 
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background-color: #333; 
-            padding: 10px;
-            box-sizing: border-box;
-            max-width: calc(50% - 20px);
-
-            @media (max-width: $tablet-min) {
-                flex: 1 1 100%; 
-                max-width: 100%;
-                flex-direction: column; 
-            }
-
-            .icon {
-                width: 126px;
-                height: auto;
-                margin-right: 20px;
-
-                img {
-                    width: 100%;
-                    height: auto;
-                }
-
-                @media (max-width: $tablet-min) {
-                    margin-right: 0;
-                    margin-bottom: 10px; 
-                }
-            }
-
-            .info {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                &__live-text {
-                    font-family: 'Gilroy-Light', Times, serif;
-                    font-size: 16rem;
-                    color: #FFFFFF;
-                    line-height: 30rem;
-                    font-weight: 300;
-                    white-space: nowrap;
-                }
-
-                &__current-data {
-                    font-family: 'Gilroy-Light', Times, serif;
-                    font-size: 14rem;
-                    font-weight: 100;
-                    color: #FFFFFF;
-                    line-height: 20rem;
-                    font-weight: 300;
-                }
-            }
-        }
+    &__assortment-card {
+        display: flex;
+        gap: 20rem;
+        width: calc(100%/3 - 20rem);
     }
 }
 
+
+.assortment-card {
+    display: flex;
+    gap: 20rem;
+
+    &__icon {
+        width: 120rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        &-title, &-watches, &-duration {
+            font-family: 'Gilroy-SemiBold', Times, serif;
+            color: #FFFFFF;
+            font-size: 16rem;
+        }
+    }
+}
 
 

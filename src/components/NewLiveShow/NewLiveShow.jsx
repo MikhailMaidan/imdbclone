@@ -49,29 +49,39 @@ const LiveShowImages = [
         currentOnline : "24 watching now",
         duration: "1h 49m"
     },
+    {
+        id: 5,
+        title: 'Bangladesh',
+        icon: Bangladesh,
+        text: "Go Explore Bangladesh",
+        currentOnline : "24 watching now",
+        duration: "1h 49m"
+    },
 ]
 
 
 export default function NewLiveShow() {
     return (
         <section className="liveshow">
-            <div className="liveshow__title flex-centered">
-                <div><span className="liveshow__title-text">Live Show</span></div>
-                <div className="liveshow__title flex-container">
-                    <span className="liveshow__title full-assortment">See all</span>
-                    <img src={Arrow} alt="arrow" />
+            <div className="liveshow__header">
+                <div className="liveshow__title flex-centered">
+                    <div><span className="liveshow__title-text">Live Show</span></div>
+                    <div className="liveshow__more-options flex-container">
+                        <span className="full-assortment">See all</span>
+                        <img src={Arrow} alt="arrow" />
+                    </div>
                 </div>
             </div>
-            <div className="liveshow__assortment flex-centered">
+            <div className="liveshow__assortment-list flex-centered">
                 {LiveShowImages.map(item => (
-                    <div className="liveshow__assortment description" key={item.id}>
-                        <div className="icon">
+                    <div className="liveshow__assortment-card" key={item.id}>
+                        <div className="assortment-card__icon">
                             <img src={item.icon} alt={item.title} />
                         </div>
-                        <div className="info">
-                            <div><span className="info__live-text">{item.text}</span></div>
-                            <div className="info__current-data">{item.currentOnline}</div>
-                            <div className="info__current-data">{item.duration}</div>
+                        <div className="assortment-card__info">
+                            <div><span className="assortment-card__info-title">{item.text}</span></div>
+                            <div className="assortment-card__info-watches">{item.currentOnline}</div>
+                            <div className="assortment-card__info-duration">{item.duration}</div>
                         </div>
                     </div>
                 ))}
@@ -79,80 +89,3 @@ export default function NewLiveShow() {
         </section>
     );
 }
-
-
-
-// export default function NewLiveShow() {
-//     return (
-//         <section className="liveshow">      
-
-//             <div className="liveshow__title flex-centered">
-//                     <div><span className="liveshow__title-text">Live Show</span></div>
-//                     <div className="liveshow__title flex-container">
-//                         <span className=" liveshow__title full-assortment">See all</span>
-//                         <img src={Arrow} alt="arrow" />
-//                     </div>
-//             </div>
-
-//             <div className="liveshow__assortment flex-centered">
-
-//                 {LiveShowImages.map(item => (
-//                     <div className="liveshow__assortment description">
-//                         <div className="icon" key={item.id}>
-//                             <img src={item.icon}  alt="{item.title}" />
-//                         </div>  
-
-//                         <div className="info">
-//                                 <div><span className="info__live-text" key={item.id}>{item.text}</span></div>
-//                                 <div className="info__current-data" key={item.id}>{item.currentOnline}</div>
-//                                 <div className="info__current-data" key={item.id}>{item.duration}</div>
-                                
-//                         </div>
-//                     </div>  
-//                 ))}
-
-                 
-
-//             </div>
-            
-            
-            
-           
-                
-
-        
-//         </section>
-//     );
-// } 
-
-
-
-
-{/* <div className="liveshow__assortment ">
-            {LiveShowImages.map(item => (
-                        <div className="header__menu-nav centered-flex" key={item.id}>
-                            <img src={item.icon} alt="movie" className='header__menu-icon'/>
-                        <span className="header__menu-title">{item.text}</span>
-                    </div>
-                    ))}
-            </div> */}
-
-
-{/* <div className="show-description-live">
-                        <div className="k-pop"><img src={TheShow} alt="show" /></div>
-                        <div className="info">
-                            <div><span className="k-pop-live-text">The K- POP Live Show</span></div>
-                            <div className="watching-now">750 watching now</div>
-                            <div className="header-searching__sign-up-button">Live Now</div>
-                        </div>
-                        </div>
-
-                        <div className="show-description-live">
-                        <div className="k-pop"><img src={Kpop} alt="k-pop" />
-                        </div>
-                        <div className="info">
-                            <div><span className="k-pop-live-text">The K- POP Live Show</span></div>
-                            <div className="watching-now">750 watching now</div>
-                            <div className="header-searching__sign-up-button">Live Now</div>
-                        </div>
-                        </div>  */}
