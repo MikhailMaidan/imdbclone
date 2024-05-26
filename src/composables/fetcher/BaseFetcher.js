@@ -30,8 +30,6 @@ export  class BaseFetcher {
             })
             .catch(err => console.log(err))
         });
-
-         
     }
 }
 
