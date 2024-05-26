@@ -1,7 +1,12 @@
 import { useState, useLayoutEffect } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Pagination } from 'swiper/modules';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+import 'swiper/css/scrollbar';
 import './NewLiveShow.scss'
 import Arrow from '@/assets/images/icons/arrow.svg'
-import TubeSpinner from '@/assets/images/icons/tube-spinner.svg'
 import { MovieService } from '@/composables/services/MovieService.js';
 
 export default function NewLiveShow() {
@@ -28,26 +33,33 @@ export default function NewLiveShow() {
                 </div>
             </div>
             <div className="liveshow__assortment-list flex-centered">
-                {moviesData && moviesData.length > 0 ? (
-                    moviesData.map(item => (
-                        <div className="liveshow__assortment-card" key={item.id}>
-                            <div className="assortment-card__icon">
-                                <img src={item.imageUrl} alt={item.name} />
-                            </div>
-                            <div className="assortment-card__info">
-                                <div><span className="assortment-card__info-title">{item.name}</span></div>
-                                <div className="assortment-card__info-watches">{item.rating}</div>
-                                <div className="assortment-card__info-duration">{item.genre}</div>
-                                <div className="assortment-card__info-year">{item.year}</div>
-                                <div className="assortment-card__info-countries">{item.countries}</div>
-                            </div>
+     
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                modules={[
+                    Pagination, 
+                    EffectFade 
+                ]}
+                pagination={{ clickable: true }}
+            >
+                {moviesData.map((item) => (
+                    <SwiperSlide className="liveshow__assortment-card" key={item.id}>
+                        <div className="assortment-card__icon">
+                            <img src={item.imageUrl} alt={item.name} />
                         </div>
+                        <div className="assortment-card__info">
+                            <div><span className="assortment-card__info-title">{item.name}</span></div>
+                            <div className="assortment-card__info-watches">{item.rating}</div>
+                            <div className="assortment-card__info-duration">{item.genre}</div>
+                            <div className="assortment-card__info-year">{item.year}</div>
+                            <div className="assortment-card__info-countries">{item.countries}</div>
+                        </div>
+                    </SwiperSlide>
                     ))
-                ) : (
-                    <div>
-                       <img src={TubeSpinner} alt='tube-spinner' />
-                    </div>
-                )}
+                }
+            </Swiper>
+
             </div>
         </section>
     );

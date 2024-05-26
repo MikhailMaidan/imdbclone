@@ -6,7 +6,7 @@ export const MovieService = () => {
 
     const getMovies = async () => {
         const moviesData = await movieService .getData();
-        const parsedMovie = moviesData.splice(0, 9);
+        const parsedMovie = moviesData.splice(0, 6);
         return parseMovies(parsedMovie); 
     }
 
