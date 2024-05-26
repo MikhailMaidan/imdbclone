@@ -8,6 +8,7 @@ import 'swiper/css/scrollbar';
 import './NewLiveShow.scss'
 import Arrow from '@/assets/images/icons/arrow.svg'
 import { MovieService } from '@/composables/services/MovieService.js';
+import { MOVIE_REQUEST_DATA } from '@/composables/constants/constants';
 
 export default function NewLiveShow() {
     const [moviesData, setMoviesData] = useState([]);
@@ -15,7 +16,7 @@ export default function NewLiveShow() {
     useLayoutEffect(() => {
         const { getMovies } = MovieService();
         const fetchMovies = async () => {
-            const data = await getMovies();
+            const data = await getMovies(MOVIE_REQUEST_DATA);
             setMoviesData(data);
         }
         fetchMovies();
