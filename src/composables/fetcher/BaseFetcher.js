@@ -12,7 +12,6 @@ export class BaseFetcher {
 
     async getData(request) {
         const formatedData = this.formatData(request);
-        console.log('forlknsfklb', formatedData)
         
         return new Promise((resolve, reject) => {
             fetch(`${this.RESOURCES}/${this.kinopoiskUrl}?${formatedData}`, {
