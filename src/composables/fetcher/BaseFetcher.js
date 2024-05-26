@@ -3,17 +3,19 @@ import {
     KINOPOISK_API_KEY
 } from "@/composables/constants/constants"
 
-export  class BaseFetcher {
+export class BaseFetcher {
     constructor(kinopoiskUrl) {
         this.RESOURCES = MAIN_URL;
         this.API_KEY = KINOPOISK_API_KEY;
         this.kinopoiskUrl = kinopoiskUrl;
     }
 
-    async getData() {
-
+    async getData(request) {
+        const formatedData = this.formatData(request);
+        console.log('forlknsfklb', formatedData)
+        
         return new Promise((resolve, reject) => {
-            fetch(`${this.RESOURCES}/${this.kinopoiskUrl}`, {
+            fetch(`${this.RESOURCES}/${this.kinopoiskUrl}?${formatedData}`, {
             method: 'GET',
             headers: {
                 'X-API-KEY': this.API_KEY,
@@ -30,6 +32,11 @@ export  class BaseFetcher {
             })
             .catch(err => console.log(err))
         });
+    }
+    
+    formatData(requestData) {
+        const params = new URLSearchParams(requestData);
+        return params.toString();
     }
 }
 

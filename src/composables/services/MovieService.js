@@ -1,12 +1,13 @@
 import { BaseFetcher } from "@/composables/fetcher/BaseFetcher.js";
 import { MOVIES_URL } from "@/composables/constants/constants";
 
+
 export const MovieService = () => {
     const movieService = new BaseFetcher(MOVIES_URL);
 
-    const getMovies = async () => {
-        const moviesData = await movieService .getData();
-        const parsedMovie = moviesData.splice(0, 6);
+    const getMovies = async (moviesOptions) => {
+        const moviesData = await movieService.getData(moviesOptions);
+        const parsedMovie = moviesData.splice(0, 9);
         return parseMovies(parsedMovie); 
     }
 
