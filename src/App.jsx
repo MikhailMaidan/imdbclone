@@ -4,6 +4,7 @@ import MovieImageContainer from '@/components/MovieImageContainer/MovieImageCont
 import NewLiveShow from './components/NewLiveShow/NewLiveShow.jsx'
 // import NewMostPopular from './components/NewMostPopular/NewMostPopular.jsx'
 // import NewMoviesForYou from './components/NewMoviesForYou/NewMoviesForYou.jsx'
+import VideoPlayer from '@/components/VideoPlayer/VideoPlayer.jsx'
 import './App.scss'
 
 export default function App() {
@@ -13,16 +14,11 @@ export default function App() {
         header={<Header />}
         poster={<BDscreen />}
       />
-
-      {/* <LiveShow /> */}
       <NewLiveShow />
+      <VideoPlayer videoId="258687"/>
       {/* <NewMostPopular />
       <NewMoviesForYou /> */}
-      
       {/* <MostPopular /> */}
-      
-      
-     
     </div>
   );
 }
