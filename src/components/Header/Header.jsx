@@ -1,11 +1,11 @@
 import './Header.scss'
-import LogoPng from '@/assets/images/header/main-logo.png'
-import Home from "@/assets/images/header/home.svg"
-import Movie from "@/assets/images/header/movie.svg"
-import Series from "@/assets/images/header/series.svg"
-import Drama from "@/assets/images/header/drama.svg"
-import Comedies from "@/assets/images/header/comedies.svg"
-import streamFlowLogo from "@/assets/images/header/logo-streamflow.png"
+import LogoPng from '~/assets/images/header/main-logo.png'
+import Home from "~/assets/images/header/home.svg"
+import Movie from "~/assets/images/header/movie.svg"
+import Series from "~/assets/images/header/series.svg"
+import Drama from "~/assets/images/header/drama.svg"
+import Comedies from "~/assets/images/header/comedies.svg"
+import streamFlowLogo from "~/assets/images/header/logo-streamflow.png"
 
 const Icons = [
     {

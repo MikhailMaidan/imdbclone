@@ -5,6 +5,7 @@ import { resolve } from 'path';
 const resolveAlias = (p) => resolve(__dirname, p);
 const alias = { 
   "@": resolveAlias('./src'),
+  "~": resolveAlias('./'),
 }
 
 // https://vitejs.dev/config/

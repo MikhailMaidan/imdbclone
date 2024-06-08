@@ -1,5 +1,5 @@
 import './Footer.scss'
-import Logo from '@/assets/images/header/main-logo.png'
+import Logo from '~/assets/images/header/main-logo.png'
 
 
 

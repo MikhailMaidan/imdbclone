@@ -1,14 +1,14 @@
 import React from 'react';
 import './MostPopular.css'
-import antMan from '@/assets/images/mostPopular/AntMan.png'
-import bandHobi from "@/assets/images/mostPopular/BandHobi.png"
-import ekti from "@/assets/images/mostPopular/Ekti.png"
-import gangsta from "@/assets/images/mostPopular/gangsta.png"
-import vandaVision from "@/assets/images/mostPopular/VandaVision.png"
-import vijle from "@/assets/images/mostPopular/Vijle.png"
-import shukhrani from "@/assets/images/mostPopular/Shukhrani.png"
-import shadi from "@/assets/images/mostPopular/Shadi.png"
-import arrow from '@/assets/images/Live_Show/arrow.png'
+import antMan from '~/assets/images/mostPopular/AntMan.png'
+import bandHobi from "~/assets/images/mostPopular/BandHobi.png"
+import ekti from "~/assets/images/mostPopular/Ekti.png"
+import gangsta from "~/assets/images/mostPopular/gangsta.png"
+import vandaVision from "~/assets/images/mostPopular/VandaVision.png"
+import vijle from "~/assets/images/mostPopular/Vijle.png"
+import shukhrani from "~/assets/images/mostPopular/Shukhrani.png"
+import shadi from "~/assets/images/mostPopular/Shadi.png"
+import arrow from '~/assets/images/Live_Show/arrow.png'
 
 
 

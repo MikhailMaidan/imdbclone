@@ -1,11 +1,11 @@
 import React from 'react';
 import './LiveShow.css'
-import arrow from '@/assets/images/Live_Show/arrow.png'
-import theShow from "@/assets/images/Live_Show/The_show.png"
-import kPop from "@/assets/images/Live_Show/K_pop.png"
-import bangladesh from "@/assets/images/Live_Show/banglagesh.png"
-import kapil from "@/assets/images/Live_Show/kapil.png"
-import minions from "@/assets/images/Live_Show/minions.png"
+import arrow from '~/assets/images/Live_Show/arrow.png'
+import theShow from "~/assets/images/Live_Show/The_show.png"
+import kPop from "~/assets/images/Live_Show/K_pop.png"
+import bangladesh from "~/assets/images/Live_Show/banglagesh.png"
+import kapil from "~/assets/images/Live_Show/kapil.png"
+import minions from "~/assets/images/Live_Show/minions.png"
 
 
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import './Latest.css'
-import amar from '@/assets/images/bangla/amar.png'
-import ami from '@/assets/images/bangla/ami.png'
-import jhom from '@/assets/images/bangla/jhom.png'
-import kisu from '@/assets/images/bangla/kisu.png'
-import obinoy from '@/assets/images/bangla/obinoy.png'
-import arrow from '@/assets/images/Live_Show/arrow.png'
+import amar from '~/assets/images/bangla/amar.png'
+import ami from '~/assets/images/bangla/ami.png'
+import jhom from '~/assets/images/bangla/jhom.png'
+import kisu from '~/assets/images/bangla/kisu.png'
+import obinoy from '~/assets/images/bangla/obinoy.png'
+import arrow from '~/assets/images/Live_Show/arrow.png'
 
 
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import './NewMoviesForYou.scss'
-import Avengers from '@/assets/images/Movies_for_you/avengers.png'
-import Bujle from '@/assets/images/Movies_for_you/Bijle.png'
-import Panther from '@/assets/images/Movies_for_you/panther.png'
-import Pashan from '@/assets/images/Movies_for_you/Pashan.png'
-import Premi from '@/assets/images/Movies_for_you/premi.png'
-import Arrow from '@/assets/images/Live_Show/arrow.png'
+import Avengers from '~/assets/images/Movies_for_you/avengers.png'
+import Bujle from '~/assets/images/Movies_for_you/Bijle.png'
+import Panther from '~/assets/images/Movies_for_you/panther.png'
+import Pashan from '~/assets/images/Movies_for_you/Pashan.png'
+import Premi from '~/assets/images/Movies_for_you/premi.png'
+import Arrow from '~/assets/images/Live_Show/arrow.png'
 
 
 const MostPopularImages = [

@@ -6,7 +6,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/css/scrollbar';
 import './NewLiveShow.scss'
-import Arrow from '@/assets/images/icons/arrow.svg'
+import Arrow from '~/assets/images/icons/arrow.svg'
 import { MovieService } from '@/composables/services/MovieService.js';
 import { MOVIE_REQUEST_DATA } from '@/composables/constants/constants';
 
