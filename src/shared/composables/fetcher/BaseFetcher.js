@@ -1,7 +1,7 @@
 import {
     MAIN_URL, 
     KINOPOISK_API_KEY
-} from "@/composables/constants/constants"
+} from "@/shared/composables/constants/constants"
 
 export class BaseFetcher {
     constructor(kinopoiskUrl) {

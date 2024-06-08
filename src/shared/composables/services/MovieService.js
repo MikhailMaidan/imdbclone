@@ -1,5 +1,5 @@
-import { BaseFetcher } from "@/composables/fetcher/BaseFetcher.js";
-import { MOVIES_URL } from "@/composables/constants/constants";
+import { BaseFetcher } from "@/shared/composables/fetcher/BaseFetcher.js";
+import { MOVIES_URL } from "@/shared/composables/constants/constants";
 
 
 export const MovieService = () => {
