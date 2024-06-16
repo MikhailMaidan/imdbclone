@@ -3,7 +3,10 @@ import BDscreen from '@/components/BDscreen/BDscreen.jsx'
 import MovieImageContainer from '@/components/MovieImageContainer/MovieImageContainer.jsx'
 import NewLiveShow from './components/NewLiveShow/NewLiveShow.jsx'
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer.jsx'
+import NewTVShow from './components/TVShows/TVShow.jsx'
+import MiniSeries from './components/MiniSeries/MiniSeries.jsx'
 import './App.scss'
+
 
 export default function App() {
   return (
@@ -13,6 +16,8 @@ export default function App() {
         poster={<BDscreen />}
       />
       <NewLiveShow />
+      <NewTVShow />
+      <MiniSeries />
       <VideoPlayer videoId="258687"/>
     </div>
   );

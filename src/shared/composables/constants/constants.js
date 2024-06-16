@@ -14,10 +14,22 @@ const MOVIE_REQUEST_DATA = {
     type: MOVIE_TYPES.FILM,
     ratingFrom: 9,
 }
+
+const TVSHOW_REQUEST_DATA = {
+    type: MOVIE_TYPES.TV_SHOW,
+    ratingFrom: 8,
+}
+
+const MINISERIES_REQUEST_DATA = {
+    type: MOVIE_TYPES.MINI_SERIES,
+    ratingFrom: 8,
+}
  
 export  {
     MAIN_URL,
     MOVIES_URL, 
     KINOPOISK_API_KEY,
     MOVIE_REQUEST_DATA,
+    TVSHOW_REQUEST_DATA,
+    MINISERIES_REQUEST_DATA
 }
