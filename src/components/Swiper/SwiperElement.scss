@@ -1,0 +1,118 @@
+@import '~/assets/styles/reset.scss';
+@import '~/assets/styles/base.scss';
+@import '~/assets/styles/variables.scss';
+
+.swiper-card {
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    gap: 20rem;
+    width: calc(100% - 20rem);
+    border-radius: 20rem;
+    overflow: hidden;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(239, 8, 239, 0.7), rgba(255, 0, 0, 0.7));
+    padding: 10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    @media (min-width: $tablet-min) {
+        flex-direction: column;
+        padding: 20rem;
+        width: calc(100%/2 - 20rem);
+        height: 40vh;
+    }
+
+    @media (min-width: $laptop-min) {
+        flex-direction: row;
+        padding: 20rem;
+        width: calc(100%/3 - 20rem);
+        height: 40vh;
+    }
+
+    &:hover {
+        opacity: 0.7;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    &__icon {
+        width: 100%;
+        border-radius: 20rem;
+        overflow: hidden;
+
+        @media (min-width: $tablet-min) {
+            width: 100%;
+        }
+
+        @media (min-width: $laptop-min) {
+            min-width: 360rem;
+            width: 360rem;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10rem;
+        
+        &-title, &-watches, &-duration, &-year, &-countries {
+            font-family: 'Gilroy-SemiBold', Times, serif;
+            font-size: 16rem;
+            color: $white;
+
+            @media (min-width: $tablet-min) {
+                font-size: 14rem;
+            }
+    
+            @media (min-width: $laptop-min) {
+                font-size: 24rem;
+            }
+        }
+
+        @media (min-width: $tablet-min) {
+            gap: 8rem;
+        }
+
+        @media (min-width: $laptop-min) {
+            gap: 20rem;
+        }
+    }
+}
+
+.swiper-horizontal {
+    height: 45vh;
+}
+
+.swiper-wrapper {
+    height: auto;
+}
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 100;
+}
+
+.swiper-pagination-bullet {
+    border: 2px solid $bullet-border;
+    min-height: 12rem;
+    min-width: 12rem;
+    opacity: 0.8;
+}
+
+.tv-show-background {
+    background: linear-gradient(135deg, rgba(0, 137, 162, 0.8), rgba(0, 217, 255, 0.8));
+}
+
+.mini-siries-background {
+    background: linear-gradient(135deg, rgb(210, 228, 9), rgba(255, 0, 0, 0.7));
+}

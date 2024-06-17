@@ -10,6 +10,28 @@ const MOVIE_TYPES = {
     ALL: "ALL"
 }
 
+
+const SLIDER_ADAPTIVE_SETTINGS = {
+    1024: { 
+        slidesPerView: 3,
+        spaceBetween: 30,
+    },                    
+    768: { 
+        slidesPerView: 2,
+        spaceBetween: 30,
+    },
+    360: { 
+        slidesPerView: 1,
+        spaceBetween: 30,
+    },
+}
+
+const SECTIONS = {
+    movies: 'movies',
+    miniSiries: 'minisiries',
+    tvshow: 'tvshow',
+}
+
 const MOVIE_REQUEST_DATA = {
     type: MOVIE_TYPES.FILM,
     ratingFrom: 9,
@@ -26,10 +48,12 @@ const MINISERIES_REQUEST_DATA = {
 }
  
 export  {
+    SECTIONS,
     MAIN_URL,
     MOVIES_URL, 
     KINOPOISK_API_KEY,
     MOVIE_REQUEST_DATA,
     TVSHOW_REQUEST_DATA,
-    MINISERIES_REQUEST_DATA
+    MINISERIES_REQUEST_DATA,
+    SLIDER_ADAPTIVE_SETTINGS,
 }

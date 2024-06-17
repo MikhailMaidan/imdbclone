@@ -1,14 +1,9 @@
 import { useState, useLayoutEffect } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Pagination } from 'swiper/modules';
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-import 'swiper/css/scrollbar';
 import './NewLiveShow.scss'
 import Arrow from '~/assets/images/icons/arrow.svg'
 import { MovieService } from '@/shared/composables/services/MovieService.js';
 import { MOVIE_REQUEST_DATA } from '@/shared/composables/constants/constants';
+import SwiperElement from '@/components/Swiper/SwiperElement';
 
 export default function NewLiveShow() {
     const [moviesData, setMoviesData] = useState([]);
@@ -33,34 +28,8 @@ export default function NewLiveShow() {
                     </div>
                 </div>
             </div>
-            <div className="liveshow__assortment-list flex-centered">
-     
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={3}
-                modules={[
-                    Pagination, 
-                    EffectFade 
-                ]}
-                pagination={{ clickable: true }}
-            >
-                {moviesData.map((item) => (
-                    <SwiperSlide className="liveshow__assortment-card" key={item.id}>
-                        <div className="assortment-card__icon">
-                            <img src={item.imageUrl} alt={item.name} />
-                        </div>
-                        <div className="assortment-card__info">
-                            <div><span className="assortment-card__info-title">{item.name}</span></div>
-                            <div className="assortment-card__info-watches">{item.rating}</div>
-                            <div className="assortment-card__info-duration">{item.genre}</div>
-                            <div className="assortment-card__info-year">{item.year}</div>
-                            <div className="assortment-card__info-countries">{item.countries}</div>
-                        </div>
-                    </SwiperSlide>
-                    ))
-                }
-            </Swiper>
-
+            <div>
+                <SwiperElement items={moviesData}  section="movies"/>
             </div>
         </section>
     );
