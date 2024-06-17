@@ -11,14 +11,14 @@ import './App.scss'
 export default function App() {
   return (
     <div>
-       <MovieImageContainer 
+       <MovieImageContainer
         header={<Header />}
         poster={<BDscreen />}
       />
       <NewLiveShow />
       <NewTVShow />
       <MiniSeries />
-      <VideoPlayer videoId="762381"/>
+      <VideoPlayer videoId="1007472"/>
     </div>
   );
 }
