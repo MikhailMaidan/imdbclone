@@ -94,7 +94,8 @@
     gap: 20rem;
 
     &__icon {
-        width: 320rem;
+        min-width: 360rem;
+        width: 360rem;
         border-radius: 20rem;
         overflow: hidden;
 

@@ -86,6 +86,29 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
     }
+
+    .swiper-horizontal {
+        height: 45vh;
+    }
+
+    .swiper-wrapper {
+        height: auto;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        text-align: center;
+        transition: 300ms opacity;
+        transform: translate3d(0, 0, 0);
+        z-index: 100;
+    }
+
+    .swiper-pagination-bullet {
+        border: 2px solid $bullet-border;
+        min-height: 12rem;
+        min-width: 12rem;
+        opacity: 0.8;
+    }
 }
 
 
@@ -94,7 +117,8 @@
     gap: 20rem;
 
     &__icon {
-        width: 320rem;
+        min-width: 360rem;
+        width: 360rem;
         border-radius: 20rem;
         overflow: hidden;
 
@@ -109,34 +133,11 @@
         flex-direction: column;
         justify-content: center;
         gap: 20rem;
-        
+
         &-title, &-watches, &-duration, &-year, &-countries {
             font-family: 'Gilroy-SemiBold', Times, serif;
             font-size: 24rem;
             color: $white;
         }
     }
-}
-
-.swiper-horizontal {
-    height: 45vh;
-}
-
-.swiper-wrapper {
-    height: auto;
-}
-
-.swiper-pagination {
-    position: absolute;
-    text-align: center;
-    transition: 300ms opacity;
-    transform: translate3d(0, 0, 0);
-    z-index: 100;
-}
-
-.swiper-pagination-bullet {
-    border: 2px solid $bullet-border;
-    min-height: 12rem;
-    min-width: 12rem;
-    opacity: 0.8;
 }
