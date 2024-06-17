@@ -18,7 +18,7 @@ export default function App() {
       <NewLiveShow />
       <NewTVShow />
       <MiniSeries />
-      <VideoPlayer videoId="258687"/>
+      <VideoPlayer videoId="1007472"/>
     </div>
   );
 }
