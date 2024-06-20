@@ -4,6 +4,7 @@ import Arrow from '~/assets/images/icons/arrow.svg';
 import { MovieService } from '@/shared/composables/services/MovieService.js';
 import { MINISERIES_REQUEST_DATA } from '@/shared/composables/constants/constants';
 import SwiperElement from '@/components/Swiper/SwiperElement';
+import CardHeading from  '@/components/CardHeadings/CardHeading.jsx'
 
 export default function MiniSeries() {
     const [miniSeriesData, setMiniSeriesData] = useState([]);
@@ -19,7 +20,20 @@ export default function MiniSeries() {
 
     return (
         <section className="minishow">
-            <div className="minishow__header">
+            <div>
+                <CardHeading />
+            </div>
+
+            <div>
+                <SwiperElement items={miniSeriesData}  section="minisiries"/>
+            </div>
+        </section>
+    );
+}          
+
+
+
+{/*<div className="minishow__header">
                 <div className="minishow__title">
                     <div><span className="minishow__title-text">Mini Series</span></div>
                     <div className="minishow__more-options flex-container">
@@ -27,10 +41,4 @@ export default function MiniSeries() {
                         <img src={Arrow} alt="arrow" className="minishow__arrow-icon" />
                     </div>
                 </div>
-            </div>
-            <div>
-                <SwiperElement items={miniSeriesData}  section="minisiries"/>
-            </div>
-        </section>
-    );
-}
+            </div>*/}

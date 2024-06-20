@@ -4,6 +4,7 @@ import Arrow from '~/assets/images/icons/arrow.svg'
 import { MovieService } from '@/shared/composables/services/MovieService.js';
 import { MOVIE_REQUEST_DATA } from '@/shared/composables/constants/constants';
 import SwiperElement from '@/components/Swiper/SwiperElement';
+import CardHeading from  '@/components/CardHeadings/CardHeading.jsx'
 
 export default function NewLiveShow() {
     const [moviesData, setMoviesData] = useState([]);
@@ -19,7 +20,17 @@ export default function NewLiveShow() {
 
     return (
         <section className="liveshow">
-            <div className="liveshow__header">
+            <CardHeading />
+            
+            <div>
+                <SwiperElement items={moviesData}  section="movies"/>
+            </div>
+        </section>
+    );
+}
+
+
+{/*<div className="liveshow__header">
                 <div className="liveshow__title">
                     <div><span className="liveshow__title-text">Movies</span></div>
                     <div className="liveshow__more-options flex-container">
@@ -27,10 +38,4 @@ export default function NewLiveShow() {
                         <img src={Arrow} alt="arrow" className="liveshow__arrow-icon" />
                     </div>
                 </div>
-            </div>
-            <div>
-                <SwiperElement items={moviesData}  section="movies"/>
-            </div>
-        </section>
-    );
-}
+            </div>*/}
