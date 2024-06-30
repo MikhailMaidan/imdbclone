@@ -1,0 +1,27 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .search-icon {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    width: 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease, width 0.3s ease;
+  }
+  
+  .search-input {
+    width: 150px;
+    opacity: 1;
+    color: white;
+    font-family: 'Gilroy-Bold', Times, serif;
+  }
