@@ -1,9 +1,5 @@
 import Arrow from '~/assets/images/icons/arrow.svg';
 import '@/components/CardHeadings/CardHeading.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Pagination } from 'swiper/modules';
-
-
 
 export default function CardHeading() {
 

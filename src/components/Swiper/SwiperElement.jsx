@@ -6,6 +6,7 @@ import 'swiper/scss/pagination';
 import 'swiper/css/scrollbar';
 import '@/components/Swiper/SwiperElement.scss';
 import { SLIDER_ADAPTIVE_SETTINGS, SECTIONS } from '@/shared/composables/constants/constants';
+import { Link } from 'react-router-dom';
 
 
 export default function SwiperElement({ items, section }) {
@@ -33,19 +34,21 @@ export default function SwiperElement({ items, section }) {
                 breakpoints={SLIDER_ADAPTIVE_SETTINGS}  
         >
             {items.map((item) => (
-                <SwiperSlide className={formedClassName()} key={item.id} >
-                    <div className="swiper-card__icon">
-                        <img src={item.imageUrl} alt={item.name} />
-                    </div>
-                    <div className="swiper-card__info">
-                        <div><span className="swiper-card__info-title">{item.name}</span></div>
-                        <div className="swiper-card__info-watches">{item.rating}</div>
-                        <div className="swiper-card__info-duration">{item.genre}</div>
-                        <div className="swiper-card__info-year">{item.year}</div>
-                        <div className="swiper-card__info-countries">{item.countries}</div>
-                    </div>
-                </SwiperSlide>
-                ))
+                    <SwiperSlide className={formedClassName()} key={item.id} >
+                         <Link to={`/player/${item.id}`} className='swiper-card__link'>
+                            <div className="swiper-card__icon">
+                                <img src={item.imageUrl} alt={item.name} />
+                            </div>
+                            <div className="swiper-card__info">
+                                <div><span className="swiper-card__info-title">{item.name}</span></div>
+                                <div className="swiper-card__info-watches">{item.rating}</div>
+                                <div className="swiper-card__info-duration">{item.genre}</div>
+                                <div className="swiper-card__info-year">{item.year}</div>
+                                <div className="swiper-card__info-countries">{item.countries}</div>
+                            </div>
+                        </Link>
+                    </SwiperSlide>
+                ))   
             }
         </Swiper>
     );
