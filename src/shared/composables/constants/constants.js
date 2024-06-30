@@ -30,6 +30,7 @@ const SECTIONS = {
     movies: 'movies',
     miniSiries: 'minisiries',
     tvshow: 'tvshow',
+    novelties: 'novelties',
 }
 
 const MOVIE_REQUEST_DATA = {
@@ -46,6 +47,12 @@ const MINISERIES_REQUEST_DATA = {
     type: MOVIE_TYPES.MINI_SERIES,
     ratingFrom: 8,
 }
+
+const NOVELTIES_REQUEST_DATA = {
+    type: MOVIE_TYPES.ALL,
+    yearFrom: 2024,
+
+}
  
 export  {
     SECTIONS,
@@ -56,4 +63,5 @@ export  {
     TVSHOW_REQUEST_DATA,
     MINISERIES_REQUEST_DATA,
     SLIDER_ADAPTIVE_SETTINGS,
+    NOVELTIES_REQUEST_DATA,
 }

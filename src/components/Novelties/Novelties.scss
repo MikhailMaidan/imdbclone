@@ -2,7 +2,7 @@
 @import '~/assets/styles/base.scss';
 @import '~/assets/styles/variables.scss';
 
-.tvshow {
+.novelties-show {
     padding: 0 20rem;
     width: 100%;
     gap: 20rem;
@@ -15,9 +15,8 @@
         align-items: center;
         justify-content: space-between;
     }
-    
+
     &__arrow-icon {
-        display: none;
         max-height: 30rem;
         transform: rotate(90deg);
     }
@@ -35,7 +34,7 @@
             font-weight: 600;
             text-align: center;
             white-space: nowrap;
-            background: linear-gradient(135deg, rgba(229, 13, 13, 0.7), rgba(255, 0, 0, 0.7));;
+            background: linear-gradient(135deg, rgb(210, 228, 9), rgba(255, 0, 0, 0.7));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -47,7 +46,7 @@
             font-size: 42rem;
             font-weight: 600;
             margin-right: auto;
-            background: linear-gradient(135deg, rgba(119, 216, 23, 0.7), rgba(255, 0, 0, 0.7));;
+            background: linear-gradient(135deg, rgb(210, 228, 9), rgba(255, 0, 0, 0.7));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -60,19 +59,5 @@
         align-items: center;
         gap: 20rem;
         cursor: pointer;
-    }
-    .swiper-pagination {
-        position: absolute;
-        text-align: center;
-        transition: 300ms opacity;
-        transform: translate3d(0, 0, 0);
-        z-index: 100;
-    }
-    
-    .swiper-pagination-bullet {
-        border: 2px solid $bullet-border;
-        min-height: 12rem;
-        min-width: 12rem;
-        opacity: 0.8;
     }
 }
