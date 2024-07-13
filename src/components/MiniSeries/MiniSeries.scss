@@ -2,62 +2,65 @@
 @import '~/assets/styles/base.scss';
 @import '~/assets/styles/variables.scss';
 
-.minishow {
+.miniseries {
+  padding: 0 20rem;
+  width: 100%;
+  gap: 20rem;
+  margin-bottom: 60rem;
+  padding-bottom: 20rem;
+  position: relative;
+  
+  &__header {
     padding: 0 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__arrow-icon {
+    max-height: 30rem;
+    transform: rotate(90deg);
+  }
+
+  &__title {
+    display: flex;
     width: 100%;
+    align-items: center;
+    margin-bottom: 50rem;
+    justify-content: space-between;
+
+    .full-assortment {
+      font-family: 'Gilroy-Bold', Times, serif;
+      font-size: 24rem;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+      background: linear-gradient(135deg,  rgb(223, 22, 18), rgba(236, 159, 4, 0.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    &-text {
+      font-family: 'Gilroy-Bold', Times, serif;
+      font-size: 42rem;
+      font-weight: 600;
+      margin-right: auto;
+      background: linear-gradient(135deg,  rgb(223, 22, 18), rgba(236, 159, 4, 0.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &__more-options {
+    display: flex;
+    align-items: center;
     gap: 20rem;
-    margin-bottom: 60rem;
-    padding-bottom: 20rem;
-    position: relative;
-    &__header {
-        padding: 0 20rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__arrow-icon {
-        max-height: 30rem;
-        transform: rotate(90deg);
-    }
-
-    &__title {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        margin-bottom: 50rem;
-        justify-content: space-between;
-
-        .full-assortment {
-            font-family: 'Gilroy-Bold', Times, serif;
-            font-size: 24rem;
-            font-weight: 600;
-            text-align: center;
-            white-space: nowrap;
-            background: linear-gradient(135deg, rgb(210, 228, 9), rgba(255, 0, 0, 0.7));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-
-        &-text {
-            font-family: 'Gilroy-Bold', Times, serif;
-            font-size: 42rem;
-            font-weight: 600;
-            margin-right: auto;
-            background: linear-gradient(135deg, rgb(210, 228, 9), rgba(255, 0, 0, 0.7));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-    }
-
-    &__more-options {
-        display: flex;
-        align-items: center;
-        gap: 20rem;
-        cursor: pointer;
-    }
+    cursor: pointer;
+  }
 }
+
+
