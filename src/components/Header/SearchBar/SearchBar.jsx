@@ -45,6 +45,11 @@ const SearchBar = () => {
     }
   };
 
+  const clearSearchInput = () => {
+    setQuery('');
+    setSearchResult([]);
+  }
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
@@ -53,7 +58,14 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <div className="search-bar" ref={searchBarRef}>
+    <div className="search-bar" ref={searchBarRef} onClick={clearSearchInput}>
+      {isExpanded ? (
+         <div className="search-bar__clear">
+         X
+       </div>
+      )
+      : ''
+    }
       { !isExpanded ? (
           <div className="search-icon" onClick={handleIconClick}>
             <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
