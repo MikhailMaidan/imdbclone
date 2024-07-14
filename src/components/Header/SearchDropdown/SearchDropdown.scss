@@ -1,0 +1,77 @@
+@import '~/assets/styles/reset.scss';
+@import '~/assets/styles/base.scss';
+@import '~/assets/styles/variables.scss';
+
+.search-dropdown {
+    position: absolute;
+    top: 50rem;
+    width: 100vh;
+    z-index: 40;
+    padding: 30rem;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.search-dropdown-wrapper {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20rem;
+    max-height: 40vh;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+      }
+
+    a {
+        font-family: 'Gilroy-Bold', Times, serif;
+        height: 100%;
+        display: flex;
+        gap: 20rem;
+        width: 100%;
+        align-items: center;
+        border: 1px dashed gray;
+        padding: 10rem;
+        transition: opacity ease-in-out .4;
+
+        @media (hover: hover) {
+            &:hover {
+               opacity: .7;
+                background-color: rgb(255, 166, 0.7);
+            }
+        }
+    }
+
+    &__icon {
+        width: 100%;
+        border-radius: 20rem;
+        overflow: hidden;
+    
+        @media (min-width: $tablet-min) {
+          width: 100%;
+        }
+    
+        @media (min-width: $laptop-min) {
+            min-width: 120rem;
+            width: 120rem;
+        }
+    
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+    }
+
+    &__info {
+
+        &--text {
+            font-size: 18rem;
+            color: black;
+        }
+    }
+
+   
+}

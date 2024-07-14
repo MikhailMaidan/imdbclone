@@ -51,13 +51,18 @@ const MINISERIES_REQUEST_DATA = {
 const NOVELTIES_REQUEST_DATA = {
     type: MOVIE_TYPES.ALL,
     yearFrom: 2024,
+}
 
+const QUERY_DATA = {
+    keyword: '',
+    ratingFrom: 8,
 }
  
 export  {
     SECTIONS,
     MAIN_URL,
-    MOVIES_URL, 
+    MOVIES_URL,
+    QUERY_DATA,
     KINOPOISK_API_KEY,
     MOVIE_REQUEST_DATA,
     TVSHOW_REQUEST_DATA,

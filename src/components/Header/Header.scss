@@ -107,11 +107,13 @@
 
     &__searching {
         cursor: pointer;
+        display: grid;
         grid-row: 1;
         grid-column: 12 / 13;
         width: 10rem;
         height: 10rem;
         justify-content: flex-end !important;
+        height: 100%;
 
         @media (min-width: $tablet-min) {
             grid-column: 12/13;
@@ -120,9 +122,10 @@
         }
 
         @media (min-width: $laptop-min) {
-            grid-column: 12/13;
+            grid-column: 11/13;
             font-size: 16rem;
-            width: 100%;
+            width: 100vh;
+            height: 100%;
         }
     }
 }

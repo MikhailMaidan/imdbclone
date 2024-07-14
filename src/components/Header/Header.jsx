@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Header.scss';
 import SearchBar from '@/components/Header/SearchBar/SearchBar';
 import LogoPng from '~/assets/images/header/main-logo.png';
@@ -97,7 +97,7 @@ export default function Header() {
                         </div>
                     ))}
                 </div>
-                <div className="header__searching centered-flex">
+                <div className="header__searching">
                     <SearchBar />
                 </div>
             </header>

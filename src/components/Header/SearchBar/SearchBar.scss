@@ -1,6 +1,8 @@
 .search-bar {
     display: flex;
-    align-items: center;
+    width: inherit;
+    height: inherit;
+    justify-content: flex-end;
     position: relative;
   }
   
@@ -20,7 +22,7 @@
   }
   
   .search-input {
-    width: 150px;
+    width: 100%;
     opacity: 1;
     color: white;
     font-family: 'Gilroy-Bold', Times, serif;
