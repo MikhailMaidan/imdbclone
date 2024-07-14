@@ -48,6 +48,7 @@ const SearchBar = () => {
   const clearSearchInput = () => {
     setQuery('');
     setSearchResult([]);
+    setIsExpanded(false);
   }
 
   useEffect(() => {
@@ -58,10 +59,10 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <div className="search-bar" ref={searchBarRef} onClick={clearSearchInput}>
+    <div className="search-bar" ref={searchBarRef} >
       {isExpanded ? (
-         <div className="search-bar__clear">
-         X
+         <div className="search-bar__clear" onClick={clearSearchInput}>
+          X
        </div>
       )
       : ''
@@ -85,7 +86,7 @@ const SearchBar = () => {
         />
       )}
       {searchResult.length && isExpanded
-        ? (<SearchDropdown data={searchResult} />)
+        ? (<SearchDropdown data={searchResult} clearInput={clearSearchInput}/>)
         : ''
       }
     </div>
