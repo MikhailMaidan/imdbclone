@@ -4,6 +4,7 @@ import { MovieService } from '@/shared/composables/services/MovieService.js';
 import { MOVIE_REQUEST_DATA } from '@/shared/composables/constants/constants';
 import SwiperElement from '@/components/Swiper/SwiperElement';
 import CardHeading from '@/components/CardHeadings/CardHeading.jsx';
+import { SECTIONS } from '@/shared/composables/constants/constants';
 
 export default function NewLiveShow() {
   const [moviesData, setMoviesData] = useState([]);
@@ -26,7 +27,7 @@ export default function NewLiveShow() {
         titleClass="liveshow__title"
       />
       <div>
-        <SwiperElement items={moviesData} section="movies" />
+        <SwiperElement items={moviesData} section={SECTIONS.movies} />
       </div>
     </section>
   );

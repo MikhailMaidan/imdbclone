@@ -4,6 +4,7 @@ import { MovieService } from '@/shared/composables/services/MovieService.js';
 import { TVSHOW_REQUEST_DATA } from '@/shared/composables/constants/constants';
 import SwiperElement from '@/components/Swiper/SwiperElement';
 import CardHeading from  '@/components/CardHeadings/CardHeading.jsx';
+import { SECTIONS } from '@/shared/composables/constants/constants';
 
 export default function NewTVShow() {
   const [tvShowsData, setTVShowsData] = useState([]);
@@ -27,7 +28,7 @@ export default function NewTVShow() {
         titleClass="tvshow__title"
       />
       <div>
-        <SwiperElement items={tvShowsData} section="tvshow"/>
+        <SwiperElement items={tvShowsData} section={SECTIONS.tvshow} />
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import { MovieService } from '@/shared/composables/services/MovieService.js';
 import { MINISERIES_REQUEST_DATA } from '@/shared/composables/constants/constants';
 import SwiperElement from '@/components/Swiper/SwiperElement';
 import CardHeading from '@/components/CardHeadings/CardHeading.jsx';
+import { SECTIONS } from '@/shared/composables/constants/constants';
 
 export default function MiniSeries() {
   const [miniSeriesData, setMiniSeriesData] = useState([]);
@@ -26,7 +27,7 @@ export default function MiniSeries() {
         titleClass="miniseries__title"
       />
       <div>
-        <SwiperElement items={miniSeriesData} section="miniSeries" />
+        <SwiperElement items={miniSeriesData} section={SECTIONS.miniSiries} />
       </div>
     </section>
   );
