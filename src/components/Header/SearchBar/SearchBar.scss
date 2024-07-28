@@ -1,9 +1,25 @@
+@import '~/assets/styles/reset.scss';
+@import '~/assets/styles/base.scss';
+@import '~/assets/styles/variables.scss';
+
 .search-bar {
   display: flex;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   justify-content: flex-end;
   position: relative;
+
+  &__clear {
+    position: absolute;
+    font-family: 'Gilroy-Bold', Times, serif;
+    font-size: 32rem;
+    background-color: white;
+    height: 100%;
+    width: 40rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
 }
 
 .search-icon {
@@ -21,10 +37,22 @@
   transition: opacity 0.3s ease, width 0.3s ease;
 }
 
-.search-bar input {
+.search-input {
   width: 100%;
   opacity: 1;
   color: white;
   font-family: 'Gilroy-Bold', Times, serif;
+}
+
+@media (min-width: $tablet-min) {
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media (min-width: $laptop-min) {
+  .search-input {
+    width: 300px;
+  }
 }
 

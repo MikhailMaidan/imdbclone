@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Header.scss';
 import SearchBar from '@/components/Header/SearchBar/SearchBar';
+import CineWave from '~/assets/images/header/CineWave.png';
 import LogoPng from '~/assets/images/header/main-logo.png';
 import Home from '~/assets/images/header/home.svg';
 import Movie from '~/assets/images/header/movie.svg';
@@ -74,7 +75,7 @@ export default function Header() {
                 <div className="header__logo">
                     <picture>
                         <source srcSet={streamFlowLogo} type="image/webp" />
-                        <img loading="lazy" src={LogoPng} alt="poster-image" />
+                        <img loading="lazy" src={streamFlowLogo} alt="poster-image" />
                     </picture>
                 </div>
                 <div className="header__menu centered-flex">

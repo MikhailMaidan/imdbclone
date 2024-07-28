@@ -18,7 +18,7 @@ export default function SwiperElement({ items, section }) {
             case SECTIONS.tvshow:
                 return `swiper-card tv-show-background`;
             case SECTIONS.miniSiries:
-                return `swiper-card mini-siries-background`
+                return `swiper-card mini-series-background`
         }
     }
 
