@@ -1,5 +1,5 @@
 const MAIN_URL = "https://kinopoiskapiunofficial.tech";
-const KINOPOISK_API_KEY = "1728ce40-48b6-4662-862b-4a85a1bc4fc4";
+const KINOPOISK_API_KEY = "58ccc5e7-782a-494c-9785-2b8fc3cac7a6";
 const MOVIES_URL = '/api/v2.2/films';
 
 const MOVIE_TYPES = {
