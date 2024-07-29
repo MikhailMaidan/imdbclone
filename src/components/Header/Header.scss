@@ -17,10 +17,14 @@
         padding: 40rem;
         gap: 20rem;
     }
-
+        
     &__logo {
         width: 80rem;
         height: 100%;
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        justify-content: center;
 
         @media (min-width: $tablet-min) {
             width: 80rem;
@@ -28,6 +32,28 @@
 
         @media (min-width: $laptop-min) {
             width: 180rem;
+        }
+
+
+        .text-gradient {
+            font-size: 42rem; 
+            line-height: 1.2;
+            font-family: 'Gilroy-Bold', Times, serif;
+            
+            background: linear-gradient(
+               60deg,
+              rgba(35, 3, 241, 0.7) 0%,
+              rgba(241, 6, 217, 0.8) 18.3%,
+              rgb(223, 22, 18, 0.7) 37.3%,
+              rgba(236, 151, 4, 0.845) 56.6%,
+              rgba(9, 232, 72, 0.8) 76.6%,
+              rgba(0, 237, 174, 0.8) 76.6%,
+              rgba(4, 229, 191, 0.8) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
     }
 
@@ -153,6 +179,8 @@
 .dropdown-item:hover {
     background-color: #f0f0f0;
 }
+
+
 
 
 

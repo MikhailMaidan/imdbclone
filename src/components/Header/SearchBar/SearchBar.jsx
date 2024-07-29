@@ -59,7 +59,7 @@ const SearchBar = () => {
     <div className="search-bar" ref={searchBarRef}>
       {isExpanded ? (
         <div className="search-bar__clear" onClick={clearSearchInput}>
-          <img src="/assets/images/header/trashbin.jpg" alt="Clear" />
+          <img src="/assets/images/header/bin_new.png" alt="Clear" className="img-rounded"/>
         </div>
       ) : (
         ''
