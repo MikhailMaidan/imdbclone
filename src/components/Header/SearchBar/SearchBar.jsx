@@ -82,7 +82,7 @@ const SearchBar = () => {
         <input
           type="text"
           value={query}
-          onInput={handleInputChange}
+          onChange={handleInputChange}
           placeholder="Search for movies"
           className="search-input"
         />
@@ -99,6 +99,8 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+
 
 
 
