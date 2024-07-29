@@ -1,4 +1,3 @@
-// React Component (Header.jsx)
 import { useState } from 'react';
 import './Header.scss';
 import SearchBar from '@/components/Header/SearchBar/SearchBar';
@@ -102,6 +101,7 @@ export default function Header() {
         </header>
     );
 }
+
 
 
 
