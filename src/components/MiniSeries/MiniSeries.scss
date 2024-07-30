@@ -61,6 +61,26 @@
     gap: 20rem;
     cursor: pointer;
   }
+
+  .swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 100;
+  }
+
+  .swiper-pagination-bullet {
+    border: 2px solid $bullet-border-miniseries;
+    min-height: 12rem;
+    min-width: 12rem;
+    opacity: 0.8;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $bullet-border-miniseries;
+  }
+
 }
 
 

@@ -1,3 +1,4 @@
+
 @import '~/assets/styles/reset.scss';
 @import '~/assets/styles/base.scss';
 @import '~/assets/styles/variables.scss';
@@ -11,7 +12,7 @@
   border-radius: 20rem;
   overflow: hidden;
   cursor: pointer;
-  background: linear-gradient(135deg, rgba(241, 3, 178, 0.7), rgba(29, 20, 147, 0.7));
+  // background: linear-gradient(135deg, rgba(241, 3, 178, 0.7), rgba(29, 20, 147, 0.7));
   padding: 10rem;
   box-shadow: 0 4px 8px rgba(213, 8, 8, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -119,13 +120,24 @@
   transition: 300ms opacity;
   transform: translate3d(0, 0, 0);
   z-index: 100;
+  
 }
 
-.swiper-pagination-bullet {
+ .swiper-pagination-bullet {
   border: 2px solid $bullet-border;
   min-height: 12rem;
   min-width: 12rem;
   opacity: 0.8;
+}
+
+
+
+// .swiper-pagination-bullet-active {
+//   background: orangered;
+// }
+
+.liveshow-background {
+  background: linear-gradient(135deg, rgba(241, 3, 178, 0.7), rgba(29, 20, 147, 0.7));
 }
 
 .tv-show-background {
@@ -135,5 +147,7 @@
 .mini-series-background {
   background: linear-gradient(135deg, rgb(223, 22, 18), rgba(236, 159, 4, 0.845));
 }
+
+
 
 

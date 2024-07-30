@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/scss';
@@ -14,11 +15,13 @@ export default function SwiperElement({ items, section }) {
     const formedClassName = () => {
         switch (section) {
             case SECTIONS.movies:
-                return `swiper-card`;
+                return `swiper-card liveshow-background`;
             case SECTIONS.tvshow:
                 return `swiper-card tv-show-background`;
             case SECTIONS.miniSiries:
-                return `swiper-card mini-series-background`
+                return `swiper-card mini-series-background`;
+            default:
+                return 'swiper-card';
         }
     }
 

@@ -72,10 +72,14 @@
   }
 
   .swiper-pagination-bullet {
-    border: 2px solid $bullet-border;
+    border: 2px solid $bullet-border-tvshow;
     min-height: 12rem;
     min-width: 12rem;
     opacity: 0.8;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $bullet-border-tvshow;
   }
 }
 
