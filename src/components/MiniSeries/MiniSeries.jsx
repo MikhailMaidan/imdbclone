@@ -13,6 +13,7 @@ export default function MiniSeries() {
     const { getMovies } = MovieService();
     const fetchMiniSeries = async () => {
       const data = await getMovies(MINISERIES_REQUEST_DATA);
+      console.log('data', data);
       setMiniSeriesData(data);
     }
     fetchMiniSeries();

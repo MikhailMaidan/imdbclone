@@ -1,0 +1,7 @@
+@import '~/assets/styles/variables.scss';
+
+.movie-page-wrapper {
+    margin: 40rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
