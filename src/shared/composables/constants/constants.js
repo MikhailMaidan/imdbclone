@@ -11,6 +11,7 @@ const MOVIE_TYPES = {
 }
 
 
+
 const SLIDER_ADAPTIVE_SETTINGS = {
     1024: { 
         slidesPerView: 3,
