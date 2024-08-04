@@ -2,9 +2,6 @@ import './MediaCard.scss';
 import { Link } from 'react-router-dom';
 
 const MediaCard = ({ movie }) => {
-
-    console.log('movie', movie);
-
     return (
         <div className='media-card-wrapper'>
             <Link

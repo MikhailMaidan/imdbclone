@@ -1,7 +1,21 @@
 @import '~/assets/styles/variables.scss';
 
-.movie-page-wrapper {
-    margin: 40rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.movie-page {
+    &__wrapper {
+        margin: 40rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__filters {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        margin: 30rem 40rem;
+        font-size: 18rem;
+        font-family: 'Gilroy', Times, serif;
+
+        &--first {
+            grid-column: 1/3;
+        }
+    }
 }
