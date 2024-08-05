@@ -5,14 +5,16 @@ export const MoviesFilter = () => {
     const movieService = new BaseFetcher(MOVIES_URL);
 
     const getMovies = async (moviesOptions) => {
-        const { type = 'ALL', ratingFrom = 0, ratingTo = 10, country = 'ALL' } = moviesOptions;
+        const { type = 'ALL', ratingFrom = 0, ratingTo = 10, country = 'ALL', yearFrom = 1980, yearTo = 2024 } = moviesOptions;
 
-        
+       
         const queryParams = {
             type,
             ratingFrom,
             ratingTo,
-            country
+            country,
+            yearFrom,
+            yearTo
         };
 
         try {
@@ -45,8 +47,6 @@ export const MoviesFilter = () => {
         getMovies,
     };
 };
-
-
 
 
 
