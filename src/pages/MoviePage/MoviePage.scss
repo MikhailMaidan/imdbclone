@@ -5,7 +5,24 @@
         margin: 40rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        color:#ddd
     }
+
+    .css-hlgwow {
+        color: white;
+    }
+
+    .css-13cymwt-control {
+    background: linear-gradient(135deg, rgba(6, 241, 237, 0.966), rgb(7, 243, 74, 0.5));
+    color: white;
+
+    }
+
+.css-19bb58m {
+    font-size: 18rem;
+    font-family: 'Gilroy', Times, serif;
+    
+}
 
     &__filters {
         display: grid;
@@ -148,6 +165,13 @@
             }
         }
     }
+}
+
+
+.css-19bb58m {
+    font-size: 18rem;
+    font-family: 'Gilroy', Times, serif;
+    color: white;
 }
 
 
