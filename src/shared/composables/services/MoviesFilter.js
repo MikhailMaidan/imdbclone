@@ -1,19 +1,22 @@
 import { BaseFetcher } from "@/shared/composables/fetcher/BaseFetcher.js";
 import { MOVIES_URL } from "@/shared/composables/constants/constants";
 
-
 export const MoviesFilter = () => {
     const movieService = new BaseFetcher(MOVIES_URL);
 
     const getMovies = async (moviesOptions) => {
-        const moviesData = await movieService.getData(moviesOptions);
-        const parsedMovie = moviesData.splice(0, 12);
-        return parseMovies(parsedMovie); 
-    }
+        const moviesData = await movieService.getData({
+            type: moviesOptions.type ?? 'ALL',
+            ratingFrom: moviesOptions.ratingFrom ?? 0,
+            ratingTo: moviesOptions.ratingTo ?? 10,
+        });
+        const parsedMovies = moviesData.splice(0, 12);
+        return parseMovies(parsedMovies); 
+    };
 
     const parseMovies = (moviesData) => {
         return moviesData.map((movie) => {
-            const genresArray = movie.genres.map((item)=>item.genre);
+            const genresArray = movie.genres.map((item) => item.genre);
             const countriesArray = movie.countries.map((item) => item.country); 
             return {
                 id: movie.kinopoiskId || movie.imdbId,
@@ -23,11 +26,13 @@ export const MoviesFilter = () => {
                 genre: `Genres: ${genresArray.join(", ")}`,
                 year: `Year: ${movie.year}`,
                 countries: `Countries: ${countriesArray.join(', ')}`,
-            }
-        })
-    }
+            };
+        });
+    };
 
     return {
         getMovies,
-    }
-}
+    };
+};
+
+
