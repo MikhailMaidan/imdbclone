@@ -3,6 +3,7 @@ const MAIN_URL = "https://kinopoiskapiunofficial.tech";
 // const KINOPOISK_API_KEY = '1728ce40-48b6-4662-862b-4a85a1bc4fc4';
 // const KINOPOISK_API_KEY = '7fddf082-a1de-4d8d-a44c-5ce54af88328';
 const KINOPOISK_API_KEY = 'decae270-cf5d-4432-b3ba-72deb3dfff74';
+// const KINOPOISK_API_KEY = 'e9e27996-69f7-4829-9855-6b73710c2b48';
 const MOVIES_URL = '/api/v2.2/films';
 
 const MOVIE_TYPES = {

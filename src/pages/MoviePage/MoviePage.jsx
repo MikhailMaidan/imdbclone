@@ -5,23 +5,28 @@ import makeAnimated from 'react-select/animated';
 import ReactSlider from 'react-slider';
 import { MoviesFilter } from '@/shared/composables/services/MoviesFilter.js';
 import { useState, useEffect } from "react";
-import { TVSHOW_REQUEST_DATA, MOVIE_TYPES } from '@/shared/composables/constants/constants';
+import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
 
 const MoviePage = () => {
     const [moviesData, setMoviesData] = useState([]);
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState(null);
+    const [selectedGenre, setSelectedGenre] = useState(null);
     const [ratingRange, setRatingRange] = useState([0, 10]);
     const [yearRange, setYearRange] = useState([1980, 2024]); 
 
     const animatedComponents = makeAnimated();
 
-    const handleGenreChange = (option) => {
+    const handleTypeChange = (option) => {
         setSelectedOption(option);
     };
 
     const handleCountryChange = (option) => {
         setSelectedCountry(option);
+    };
+
+    const handleGenreFilterChange = (option) => {
+        setSelectedGenre(option);
     };
 
     const handleRatingChange = (value) => {
@@ -42,14 +47,15 @@ const MoviePage = () => {
                 country: selectedCountry?.value ?? 'ALL',
                 yearFrom: yearRange[0],
                 yearTo: yearRange[1],
+                genre: selectedGenre?.value ?? 'ALL', 
             };
             const data = await getMovies(requestData);
             setMoviesData(data);
         };
         fetchMovies();
-    }, [selectedOption, selectedCountry, ratingRange, yearRange]);
+    }, [selectedOption, selectedCountry, ratingRange, yearRange, selectedGenre]); 
 
-    const genreOptions = [
+    const typeOptions = [
         { value: MOVIE_TYPES.FILM, label: 'Film' },
         { value: MOVIE_TYPES.TV_SHOW, label: 'TV Show' },
         { value: MOVIE_TYPES.TV_SERIES, label: 'TV Series' },
@@ -68,15 +74,24 @@ const MoviePage = () => {
         { value: 'ALL', label: 'All' },
     ];
 
+    const genreOptions = [
+        { value: 'Action', label: 'Action' },
+        { value: 'Комедия', label: 'Comedy' },
+        { value: 'Драма', label: 'Drama' },
+        { value: 'Horror', label: 'Horror' },
+        { value: 'Sci-Fi', label: 'Sci-Fi' },
+        { value: 'ALL', label: 'All' },
+    ];
+
     return (
         <div className='movie-page'>
             <div className='movie-page__filters'>
                 <Select 
                     className="movie-page__filters--first"
                     value={selectedOption}
-                    onChange={handleGenreChange}
+                    onChange={handleTypeChange}
                     components={animatedComponents} 
-                    options={genreOptions}
+                    options={typeOptions}
                     isClearable={true}
                 />
                 <Select 
@@ -85,6 +100,14 @@ const MoviePage = () => {
                     onChange={handleCountryChange}
                     components={animatedComponents} 
                     options={countryOptions}
+                    isClearable={true}
+                />
+                <Select 
+                    className="movie-page__filters--third"
+                    value={selectedGenre}
+                    onChange={handleGenreFilterChange}
+                    components={animatedComponents} 
+                    options={genreOptions}
                     isClearable={true}
                 />
                 <div className="movie-page__filters--slider">
@@ -103,7 +126,7 @@ const MoviePage = () => {
                     />
                 </div>
                 <div className="movie-page__filters--year">
-                    <label>Release Year: {yearRange[0]} - {yearRange[1]}</label>
+                    <label>Year of Release: {yearRange[0]} - {yearRange[1]}</label>
                     <ReactSlider
                         className="horizontal-slider"
                         thumbClassName="thumb"
@@ -132,6 +155,8 @@ const MoviePage = () => {
 };
 
 export default MoviePage;
+
+
 
 
 

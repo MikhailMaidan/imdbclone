@@ -1,12 +1,11 @@
-
- @import '~/assets/styles/variables.scss';
+@import '~/assets/styles/variables.scss';
 
 .movie-page {
-        &__wrapper {
-            margin: 40rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
+    &__wrapper {
+        margin: 40rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 
     &__filters {
         display: grid;
@@ -35,6 +34,15 @@
             font-family: 'Gilroy', Times, serif;
         }
 
+        &--third {
+            grid-column: 3 / span 1; 
+            grid-row: 1; 
+            position: relative; 
+            z-index: 10; 
+            font-size: 18rem;
+            font-family: 'Gilroy', Times, serif;
+        }
+
         &--slider {
             grid-column: 1 / span 1;
             grid-row: 2; 
@@ -52,13 +60,13 @@
 
             .horizontal-slider {
                 width: 100%;
-                height: 15px;
+                height: 15rem;
                 position: relative;
                 z-index: 5; 
 
                 .thumb {
-                    height: 20px;
-                    width: 20px;
+                    height: 20rem;
+                    width: 20rem;
                     background-color: #ff00f7;
                     border-radius: 50%;
                     cursor: grab;
@@ -77,7 +85,7 @@
                     top: 0;
                     bottom: 0;
                     background: #ddd;
-                    border-radius: 999px;
+                    border-radius: 999rem;
                 }
 
                 .track-1 {
@@ -105,13 +113,13 @@
 
             .horizontal-slider {
                 width: 100%;
-                height: 15px;
+                height: 15rem;
                 position: relative;
                 z-index: 5; 
 
                 .thumb {
-                    height: 20px;
-                    width: 20px;
+                    height: 20rem;
+                    width: 20rem;
                     background-color: #ff00f7;
                     border-radius: 50%;
                     cursor: grab;
@@ -130,16 +138,19 @@
                     top: 0;
                     bottom: 0;
                     background: #ddd;
-                    border-radius: 10px; 
+                    border-radius: 10rem; 
                 }
 
                 .track-1 {
                     background: linear-gradient(135deg, rgba(241, 3, 178, 0.7), rgba(29, 20, 147, 0.7));
-                    border-radius: 10px; 
+                    border-radius: 10rem; 
                 }
             }
         }
     }
 }
+
+
+
 
 
