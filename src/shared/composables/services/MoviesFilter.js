@@ -5,22 +5,33 @@ export const MoviesFilter = () => {
     const movieService = new BaseFetcher(MOVIES_URL);
 
     const getMovies = async (moviesOptions) => {
-        const moviesData = await movieService.getData({
-            type: moviesOptions.type ?? 'ALL',
-            ratingFrom: moviesOptions.ratingFrom ?? 0,
-            ratingTo: moviesOptions.ratingTo ?? 10,
-        });
-        const parsedMovies = moviesData.splice(0, 12);
-        return parseMovies(parsedMovies); 
+        const { type = 'ALL', ratingFrom = 0, ratingTo = 10, country = 'ALL' } = moviesOptions;
+
+        
+        const queryParams = {
+            type,
+            ratingFrom,
+            ratingTo,
+            country
+        };
+
+        try {
+            const moviesData = await movieService.getData(queryParams);
+            const parsedMovies = moviesData.splice(0, 12);
+            return parseMovies(parsedMovies);
+        } catch (error) {
+            console.error('Error fetching movies:', error);
+            return [];
+        }
     };
 
     const parseMovies = (moviesData) => {
         return moviesData.map((movie) => {
             const genresArray = movie.genres.map((item) => item.genre);
-            const countriesArray = movie.countries.map((item) => item.country); 
+            const countriesArray = movie.countries.map((item) => item.country);
             return {
                 id: movie.kinopoiskId || movie.imdbId,
-                name:  movie.nameRu || movie.nameOriginal,
+                name: movie.nameRu || movie.nameOriginal,
                 imageUrl: movie.posterUrlPreview,
                 rating: `Rating from the Kinopoisk: ${movie.ratingKinopoisk}`,
                 genre: `Genres: ${genresArray.join(", ")}`,
@@ -34,5 +45,9 @@ export const MoviesFilter = () => {
         getMovies,
     };
 };
+
+
+
+
 
 

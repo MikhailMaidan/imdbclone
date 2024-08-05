@@ -10,12 +10,17 @@ import { TVSHOW_REQUEST_DATA, MOVIE_TYPES } from '@/shared/composables/constants
 const MoviePage = () => {
     const [moviesData, setMoviesData] = useState([]);
     const [selectedOption, setSelectedOption] = useState(null);
-    const [ratingRange, setRatingRange] = useState([0, 10]); 
+    const [selectedCountry, setSelectedCountry] = useState(null);
+    const [ratingRange, setRatingRange] = useState([0, 10]);
 
     const animatedComponents = makeAnimated();
 
     const handleGenreChange = (option) => {
         setSelectedOption(option);
+    };
+
+    const handleCountryChange = (option) => {
+        setSelectedCountry(option);
     };
 
     const handleRatingChange = (value) => {
@@ -29,12 +34,13 @@ const MoviePage = () => {
                 type: selectedOption?.value ?? MOVIE_TYPES.ALL,
                 ratingFrom: ratingRange[0],
                 ratingTo: ratingRange[1],
+                country: selectedCountry?.value ?? 'ALL', 
             };
             const data = await getMovies(requestData);
             setMoviesData(data);
         };
         fetchMovies();
-    }, [selectedOption, ratingRange]);
+    }, [selectedOption, selectedCountry, ratingRange]);
 
     const genreOptions = [
         { value: MOVIE_TYPES.FILM, label: 'Film' },
@@ -42,6 +48,17 @@ const MoviePage = () => {
         { value: MOVIE_TYPES.TV_SERIES, label: 'TV Series' },
         { value: MOVIE_TYPES.MINI_SERIES, label: 'Mini Series' },
         { value: MOVIE_TYPES.ALL, label: 'All' },
+    ];
+
+    const countryOptions = [
+        { value: 'США', label: 'USA' },
+        { value: 'Россия', label: 'Russia' },
+        { value: 'Германия', label: 'Germany' },
+        { value: 'France', label: 'France' },
+        { value: 'Turkey', label: 'Turkey' },
+        { value: 'India', label: 'India' },
+        { value: 'China', label: 'China' },
+        { value: 'ALL', label: 'All' },
     ];
 
     return (
@@ -53,6 +70,14 @@ const MoviePage = () => {
                     onChange={handleGenreChange}
                     components={animatedComponents} 
                     options={genreOptions}
+                    isClearable={true}
+                />
+                <Select 
+                    className="movie-page__filters--second"
+                    value={selectedCountry}
+                    onChange={handleCountryChange}
+                    components={animatedComponents} 
+                    options={countryOptions}
                     isClearable={true}
                 />
                 <div className="movie-page__filters--slider">
@@ -85,6 +110,7 @@ const MoviePage = () => {
 };
 
 export default MoviePage;
+
 
 
 
