@@ -6,6 +6,8 @@ import FilterFields from '@/components/FilterFields/FilterFields';
 import { useMoviesFilters } from "@/shared/modules/movies/use/useMoviesFilters";
 import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
 
+const DEBOUNCE_DELAY = 1500;
+
 const MoviePage = () => {
     const { allFields, fields } = useMoviesFilters();
     const [moviesData, setMoviesData] = useState([]);
@@ -25,23 +27,28 @@ const MoviePage = () => {
     };
  
     useEffect(() => {
-        const { getMovies } = MoviesFilter();
-        const fetchMovies = async () => {
-            const requestData = {
-                type: filtersData.movieType ?? MOVIE_TYPES.ALL,
-                country: filtersData.movieCountry ?? 'ALL',
-                genre: filtersData.movieGenre ?? 'ALL',
-                ratingFrom: filtersData.ratingRange[0],
-                ratingTo: filtersData.ratingRange[1],
-                yearFrom: filtersData.yearRange[0],
-                yearTo: filtersData.yearRange[1],
+        const handler = setTimeout(() => {
+            const { getMovies } = MoviesFilter();
+            const fetchMovies = async () => {
+                const requestData = {
+                    type: filtersData.movieType ?? MOVIE_TYPES.ALL,
+                    country: filtersData.movieCountry ?? 'ALL',
+                    genre: filtersData.movieGenre ?? 'ALL',
+                    ratingFrom: filtersData.ratingRange[0],
+                    ratingTo: filtersData.ratingRange[1],
+                    yearFrom: filtersData.yearRange[0],
+                    yearTo: filtersData.yearRange[1],
+                };
+                const data = await getMovies(requestData);
+                setMoviesData(data);
             };
-            const data = await getMovies(requestData);
-            setMoviesData(data);
+            fetchMovies();
+        }, DEBOUNCE_DELAY);
+        
+        return () => {
+            clearTimeout(handler);
         };
-        fetchMovies();
     }, [filtersData]);
-
     return (
         <div className='movie-page'>
             <div className='movie-page__filters'>
