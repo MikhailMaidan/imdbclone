@@ -8,52 +8,41 @@ import { useState, useEffect } from "react";
 import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
 
 const MoviePage = () => {
-    const [moviesData, setMoviesData] = useState([]);
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [selectedCountry, setSelectedCountry] = useState(null);
-    const [selectedGenre, setSelectedGenre] = useState(null);
-    const [ratingRange, setRatingRange] = useState([0, 10]);
-    const [yearRange, setYearRange] = useState([1980, 2024]); 
-
     const animatedComponents = makeAnimated();
+    const [moviesData, setMoviesData] = useState([]);
 
-    const handleTypeChange = (option) => {
-        setSelectedOption(option);
+    const [filtersData, setFiltersData] = useState({
+        movieType: null,
+        movieCountry: null,
+        selectedGenre: null,
+        ratingRange: [0, 10],
+        yearRange: [1980, 2024],
+    });
+
+    const handleFilterChange = (key, value) => {
+        setFiltersData(prevState => ({
+            ...prevState,
+            [key]: value,
+        }));
     };
-
-    const handleCountryChange = (option) => {
-        setSelectedCountry(option);
-    };
-
-    const handleGenreFilterChange = (option) => {
-        setSelectedGenre(option);
-    };
-
-    const handleRatingChange = (value) => {
-        setRatingRange(value);
-    };
-
-    const handleYearChange = (value) => {
-        setYearRange(value);
-    };
-
+ 
     useEffect(() => {
         const { getMovies } = MoviesFilter();
         const fetchMovies = async () => {
             const requestData = {
-                type: selectedOption?.value ?? MOVIE_TYPES.ALL,
-                ratingFrom: ratingRange[0],
-                ratingTo: ratingRange[1],
-                country: selectedCountry?.value ?? 'ALL',
-                yearFrom: yearRange[0],
-                yearTo: yearRange[1],
-                genre: selectedGenre?.value ?? 'ALL', 
+                type: filtersData.movieType ?? MOVIE_TYPES.ALL,
+                ratingFrom: filtersData.ratingRange[0],
+                ratingTo: filtersData.ratingRange[1],
+                country: filtersData.selectedCountry?.value ?? 'ALL',
+                yearFrom: filtersData.yearRange[0],
+                yearTo: filtersData.yearRange[1],
+                genre: filtersData.selectedGenre?.value ?? 'ALL', 
             };
             const data = await getMovies(requestData);
             setMoviesData(data);
         };
         fetchMovies();
-    }, [selectedOption, selectedCountry, ratingRange, yearRange, selectedGenre]); 
+    }, [filtersData]); 
 
     const typeOptions = [
         { value: MOVIE_TYPES.FILM, label: 'Film' },
@@ -88,53 +77,53 @@ const MoviePage = () => {
             <div className='movie-page__filters'>
                 <Select 
                     className="movie-page__filters--first"
-                    value={selectedOption}
-                    onChange={handleTypeChange}
+                    value={typeOptions.find(option => option.value === filtersData.movieType) ??  null}
+                    onChange={option => handleFilterChange('movieType', option?.value ?? MOVIE_TYPES.ALL)}
                     components={animatedComponents} 
                     options={typeOptions}
                     isClearable={true}
                 />
-                <Select 
+               <Select 
                     className="movie-page__filters--second"
-                    value={selectedCountry}
-                    onChange={handleCountryChange}
+                    value={countryOptions.find(option => option.value === filtersData.movieCountry) ??  null} 
+                    onChange={option => handleFilterChange('movieCountry', option?.value ?? null)}
                     components={animatedComponents} 
                     options={countryOptions}
                     isClearable={true}
                 />
                 <Select 
                     className="movie-page__filters--third"
-                    value={selectedGenre}
-                    onChange={handleGenreFilterChange}
+                    value={genreOptions.find(option => option.value === filtersData.selectedGenre) ??  null}
+                    onChange={option => handleFilterChange('selectedGenre', option?.value ?? null)}
                     components={animatedComponents} 
                     options={genreOptions}
                     isClearable={true}
                 />
                 <div className="movie-page__filters--slider">
-                    <label>Rating: {ratingRange[0]} - {ratingRange[1]}</label>
+                    <label>Rating: {filtersData.ratingRange[0]} - {filtersData.ratingRange[1]}</label>
                     <ReactSlider
                         className="horizontal-slider"
                         thumbClassName="thumb"
                         trackClassName="track"
                         min={0}
                         max={10}
-                        value={ratingRange}
-                        onChange={handleRatingChange}
+                        value={filtersData.ratingRange}
+                        onChange={value => handleFilterChange('ratingRange', value)}
                         ariaLabel={['Lower thumb', 'Upper thumb']}
                         ariaValuetext={state => `Thumb value ${state.valueNow}`}
                         renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
                     />
                 </div>
                 <div className="movie-page__filters--year">
-                    <label>Year of Release: {yearRange[0]} - {yearRange[1]}</label>
+                    <label>Year of Release: {filtersData.yearRange[0]} - {filtersData.yearRange[1]}</label>
                     <ReactSlider
                         className="horizontal-slider"
                         thumbClassName="thumb"
                         trackClassName="track"
                         min={1980}
                         max={2024}
-                        value={yearRange}
-                        onChange={handleYearChange}
+                        value={filtersData.yearRange}
+                        onChange={value => handleFilterChange('yearRange', value)}
                         ariaLabel={['Lower thumb', 'Upper thumb']}
                         ariaValuetext={state => `Thumb value ${state.valueNow}`}
                         renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
