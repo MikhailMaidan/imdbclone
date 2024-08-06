@@ -21,11 +21,3 @@ const SelectField = ({ filterData, handleFilterChange }) => {
 };
 
 export default SelectField;
-
-
-
-
-
-
-
-

@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 
 const componentMapping = {
     'select': lazy(() => import('@/components/FilterFields/SelectField/SelectField')),
+    'range': lazy(() => import('@/components/FilterFields/RangeField/RangeField')),
 };
 
 

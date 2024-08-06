@@ -30,10 +30,30 @@ export const useMoviesFilters = () => {
         options: typeOptions,
     }
 
+    const ratingRangeField = {
+        name: 'ratingRange',
+        type: 'range',
+        value: [0, 10],
+        min: 0,
+        max: 10,
+        placeholder: 'Rating Range',
+    }
+
+    const yearRangeField = {
+        name: 'yearRange',
+        type: 'range',
+        value: [1980, 2024],
+        min: 1980,
+        max: 2024,
+        placeholder: 'Year of Release',
+    }
+
     const allFields = [
         moviesTypeField,
         movieCountryField,
         movieGenreField,
+        ratingRangeField,
+        yearRangeField,
     ];
 
     return {
@@ -42,6 +62,8 @@ export const useMoviesFilters = () => {
             moviesTypeField,
             movieCountryField,
             movieGenreField,
+            ratingRangeField,
+            yearRangeField,
         }
     };
 };

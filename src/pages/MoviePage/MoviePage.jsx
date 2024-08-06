@@ -2,9 +2,9 @@ import './MoviePage.scss';
 import MediaCard from '@/components/MediaCard/MediaCard';
 import { MoviesFilter } from '@/shared/composables/services/MoviesFilter.js';
 import { useState, useEffect } from "react";
-import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
 import FilterFields from '@/components/FilterFields/FilterFields';
 import { useMoviesFilters } from "@/shared/modules/movies/use/useMoviesFilters";
+import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
 
 const MoviePage = () => {
     const { allFields, fields } = useMoviesFilters();
@@ -13,8 +13,8 @@ const MoviePage = () => {
         movieType: fields.moviesTypeField.value,
         movieCountry: fields.movieCountryField.value,
         movieGenre: fields.movieGenreField.value,
-        ratingRange: [0, 10],
-        yearRange: [1980, 2024],
+        ratingRange: fields.ratingRangeField.value,
+        yearRange: fields.yearRangeField.value,
     });
 
     const handleFilterChange = (key, value) => {
@@ -31,55 +31,27 @@ const MoviePage = () => {
                 type: filtersData.movieType ?? MOVIE_TYPES.ALL,
                 country: filtersData.movieCountry ?? 'ALL',
                 genre: filtersData.movieGenre ?? 'ALL',
+                ratingFrom: filtersData.ratingRange[0],
+                ratingTo: filtersData.ratingRange[1],
+                yearFrom: filtersData.yearRange[0],
+                yearTo: filtersData.yearRange[1],
             };
             const data = await getMovies(requestData);
             setMoviesData(data);
         };
         fetchMovies();
-    }, [filtersData])
-
+    }, [filtersData]);
 
     return (
         <div className='movie-page'>
             <div className='movie-page__filters'>
-                {allFields.map((field, index) => 
-                    <FilterFields 
+                {allFields.map((field, index) => (
+                    <FilterFields
+                        key={index}
                         filterData={{ ...field, value: filtersData[field.name] }}
-                        handleFilterChange ={handleFilterChange} 
-                        key={index} 
+                        handleFilterChange={handleFilterChange}
                     />
-                )}
-               
-                {/* <div className="movie-page__filters--slider">
-                    <label>Rating: {filtersData.ratingRange[0]} - {filtersData.ratingRange[1]}</label>
-                    <ReactSlider
-                        className="horizontal-slider"
-                        thumbClassName="thumb"
-                        trackClassName="track"
-                        min={0}
-                        max={10}
-                        value={filtersData.ratingRange}
-                        onChange={value => handleFilterChange('ratingRange', value)}
-                        ariaLabel={['Lower thumb', 'Upper thumb']}
-                        ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                        renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                    />
-                </div>
-                <div className="movie-page__filters--year">
-                    <label>Year of Release: {filtersData.yearRange[0]} - {filtersData.yearRange[1]}</label>
-                    <ReactSlider
-                        className="horizontal-slider"
-                        thumbClassName="thumb"
-                        trackClassName="track"
-                        min={1980}
-                        max={2024}
-                        value={filtersData.yearRange}
-                        onChange={value => handleFilterChange('yearRange', value)}
-                        ariaLabel={['Lower thumb', 'Upper thumb']}
-                        ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                        renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                    />
-                </div> */}
+                ))}
             </div>
             <div className='movie-page__wrapper'>
                 {moviesData.length > 0 ? (
@@ -95,11 +67,3 @@ const MoviePage = () => {
 };
 
 export default MoviePage;
-
-
-
-
-
-
-
-
