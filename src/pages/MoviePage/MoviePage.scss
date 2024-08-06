@@ -1,13 +1,23 @@
+
 @import '~/assets/styles/variables.scss';
 
 .movie-page {
     &__wrapper {
         margin: 40rem;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        color:#ddd
+        grid-template-columns: repeat(1, 1fr);
+        color:#ddd;
+
+        @media (min-width: $tablet-min) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: $laptop-min) {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 
+    
     .css-hlgwow {
         color: white;
     }
@@ -33,6 +43,8 @@
         font-size: 18rem;
         font-family: 'Gilroy', Times, serif;
 
+ 
+
         &--first {
             grid-column: 1 / span 1; 
             grid-row: 1; 
@@ -40,6 +52,13 @@
             z-index: 10; 
             font-size: 18rem;
             font-family: 'Gilroy', Times, serif;
+
+    
+            @media (min-width: $laptop-min) {
+                grid-row: 1; 
+                grid-column: 1 / span 1; 
+            }
+
         }
 
         &--second {
@@ -49,6 +68,14 @@
             z-index: 10; 
             font-size: 18rem;
             font-family: 'Gilroy', Times, serif;
+
+
+    
+            @media (min-width: $laptop-min) {
+                grid-row: 1;
+                grid-column: 2 / span 1; 
+            }
+
         }
 
         &--third {
@@ -73,6 +100,15 @@
             label {
                 color: white;
                 margin-bottom: 10rem;
+                font-size: 12rem;
+
+                @media (min-width: $tablet-min) {
+                    font-size: 14rem;
+                }
+
+                @media (min-width: $laptop-min) {
+                    font-size: 18rem;
+                }
             }
 
             .horizontal-slider {
@@ -126,6 +162,15 @@
                 margin-bottom: 10rem;
                 text-align: center;
                 width: 100%;
+                font-size: 12rem;
+
+                @media (min-width: $tablet-min) {
+                    font-size: 14rem;
+                }
+
+                @media (min-width: $laptop-min) {
+                    font-size: 18rem;
+                }
             }
 
             .horizontal-slider {
