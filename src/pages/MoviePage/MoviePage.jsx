@@ -1,20 +1,18 @@
 import './MoviePage.scss';
-import Select from 'react-select';
 import MediaCard from '@/components/MediaCard/MediaCard';
-import makeAnimated from 'react-select/animated';
-import ReactSlider from 'react-slider';
 import { MoviesFilter } from '@/shared/composables/services/MoviesFilter.js';
 import { useState, useEffect } from "react";
 import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
+import FilterFields from '@/components/FilterFields/FilterFields';
+import { useMoviesFilters } from "@/shared/modules/movies/use/useMoviesFilters";
 
 const MoviePage = () => {
-    const animatedComponents = makeAnimated();
+    const { allFields, fields } = useMoviesFilters();
     const [moviesData, setMoviesData] = useState([]);
-
     const [filtersData, setFiltersData] = useState({
-        movieType: null,
-        movieCountry: null,
-        selectedGenre: null,
+        movieType: fields.moviesTypeField.value,
+        movieCountry: fields.movieCountryField.value,
+        movieGenre: fields.movieGenreField.value,
         ratingRange: [0, 10],
         yearRange: [1980, 2024],
     });
@@ -31,75 +29,28 @@ const MoviePage = () => {
         const fetchMovies = async () => {
             const requestData = {
                 type: filtersData.movieType ?? MOVIE_TYPES.ALL,
-                ratingFrom: filtersData.ratingRange[0],
-                ratingTo: filtersData.ratingRange[1],
-                country: filtersData.selectedCountry?.value ?? 'ALL',
-                yearFrom: filtersData.yearRange[0],
-                yearTo: filtersData.yearRange[1],
-                genre: filtersData.selectedGenre?.value ?? 'ALL', 
+                country: filtersData.movieCountry ?? 'ALL',
+                genre: filtersData.movieGenre ?? 'ALL',
             };
             const data = await getMovies(requestData);
             setMoviesData(data);
         };
         fetchMovies();
-    }, [filtersData]); 
+    }, [filtersData])
 
-    const typeOptions = [
-        { value: MOVIE_TYPES.FILM, label: 'Film' },
-        { value: MOVIE_TYPES.TV_SHOW, label: 'TV Show' },
-        { value: MOVIE_TYPES.TV_SERIES, label: 'TV Series' },
-        { value: MOVIE_TYPES.MINI_SERIES, label: 'Mini Series' },
-        { value: MOVIE_TYPES.ALL, label: 'All' },
-    ];
-
-    const countryOptions = [
-        { value: 'USA', label: 'USA' },
-        { value: 'Russia', label: 'Russia' },
-        { value: 'Germany', label: 'Germany' },
-        { value: 'France', label: 'France' },
-        { value: 'Turkey', label: 'Turkey' },
-        { value: 'India', label: 'India' },
-        { value: 'China', label: 'China' },
-        { value: 'ALL', label: 'All' },
-    ];
-
-    const genreOptions = [
-        { value: 'Action', label: 'Action' },
-        { value: 'Комедия', label: 'Comedy' },
-        { value: 'Драма', label: 'Drama' },
-        { value: 'Horror', label: 'Horror' },
-        { value: 'Sci-Fi', label: 'Sci-Fi' },
-        { value: 'ALL', label: 'All' },
-    ];
 
     return (
         <div className='movie-page'>
             <div className='movie-page__filters'>
-                <Select 
-                    className="movie-page__filters--first"
-                    value={typeOptions.find(option => option.value === filtersData.movieType) ??  null}
-                    onChange={option => handleFilterChange('movieType', option?.value ?? MOVIE_TYPES.ALL)}
-                    components={animatedComponents} 
-                    options={typeOptions}
-                    isClearable={true}
-                />
-               <Select 
-                    className="movie-page__filters--second"
-                    value={countryOptions.find(option => option.value === filtersData.movieCountry) ??  null} 
-                    onChange={option => handleFilterChange('movieCountry', option?.value ?? null)}
-                    components={animatedComponents} 
-                    options={countryOptions}
-                    isClearable={true}
-                />
-                <Select 
-                    className="movie-page__filters--third"
-                    value={genreOptions.find(option => option.value === filtersData.selectedGenre) ??  null}
-                    onChange={option => handleFilterChange('selectedGenre', option?.value ?? null)}
-                    components={animatedComponents} 
-                    options={genreOptions}
-                    isClearable={true}
-                />
-                <div className="movie-page__filters--slider">
+                {allFields.map((field, index) => 
+                    <FilterFields 
+                        filterData={{ ...field, value: filtersData[field.name] }}
+                        handleFilterChange ={handleFilterChange} 
+                        key={index} 
+                    />
+                )}
+               
+                {/* <div className="movie-page__filters--slider">
                     <label>Rating: {filtersData.ratingRange[0]} - {filtersData.ratingRange[1]}</label>
                     <ReactSlider
                         className="horizontal-slider"
@@ -128,7 +79,7 @@ const MoviePage = () => {
                         ariaValuetext={state => `Thumb value ${state.valueNow}`}
                         renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
                     />
-                </div>
+                </div> */}
             </div>
             <div className='movie-page__wrapper'>
                 {moviesData.length > 0 ? (

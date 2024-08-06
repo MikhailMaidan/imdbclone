@@ -1,5 +1,6 @@
 import { BaseFetcher } from "@/shared/composables/fetcher/BaseFetcher.js";
 import { MOVIES_URL } from "@/shared/composables/constants/constants";
+// import { useMoviesFilters } from "@/shared/modules/movies/use/useMoviesFilters";
 
 export const MoviesFilter = () => {
     const movieService = new BaseFetcher(MOVIES_URL);
