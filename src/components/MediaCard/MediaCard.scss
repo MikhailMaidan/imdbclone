@@ -7,6 +7,12 @@
     gap: 20rem;
     overflow: hidden;
     padding: 10rem;
+    // background: linear-gradient(135deg, rgba(25, 22, 198, 0.8), rgba(9, 232, 72, 0.8));
+
+    .media-card-wrapper__link {
+      background: linear-gradient(135deg, rgba(250, 4, 4, 0.8), rgba(18, 1, 255, 0.976));
+    }
+  
     
     a {
         font-family: 'Gilroy-Bold', Times, serif;
@@ -21,7 +27,7 @@
         transition: transform 0.3s, box-shadow 0.4s;
         border-radius: 20rem;
         background-color: white;
-        color: #000000;
+        color: white;
   
         @media (hover: hover) {
           &:hover {
@@ -54,7 +60,7 @@
       &__info {
         &--text {
           font-size: 18rem;
-          color: #000000;
+          color: white;
         }
       }
 }
