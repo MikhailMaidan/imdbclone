@@ -22,8 +22,10 @@ export class BaseFetcher {
         })
             .then(res => res.json())
             .then(json => {
-                if (json.items.length) {
+                if (json.items?.length) {
                     resolve(json.items);
+                } else if (json) {
+                    resolve(json)
                 } else {
                     reject();
                 }

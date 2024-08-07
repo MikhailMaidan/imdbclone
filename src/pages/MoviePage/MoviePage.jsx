@@ -1,10 +1,11 @@
 import './MoviePage.scss';
 import MediaCard from '@/components/MediaCard/MediaCard';
 import { MoviesFilter } from '@/shared/composables/services/MoviesFilter.js';
+import { FiltersDataService } from '@/shared/composables/services/FiltersDataService.js';
 import { useState, useEffect } from "react";
 import FilterFields from '@/components/FilterFields/FilterFields';
 import { useMoviesFilters } from "@/shared/modules/movies/use/useMoviesFilters";
-import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
+import { MOVIE_TYPES } from '@/shared/composables/constants/constants';
 
 const DEBOUNCE_DELAY = 1500;
 
@@ -25,7 +26,8 @@ const MoviePage = () => {
             [key]: value,
         }));
     };
- 
+
+    // Загрузка фильмов на основе выбранных фильтров
     useEffect(() => {
         const handler = setTimeout(() => {
             const { getMovies } = MoviesFilter();
@@ -49,6 +51,38 @@ const MoviePage = () => {
             clearTimeout(handler);
         };
     }, [filtersData]);
+
+
+    // Заполнение options для жанров и стран после получения данных
+    useEffect(() => {
+        const fetchFiltersData = async () => {
+            const { getFiltersData } = FiltersDataService();
+            const { genres, countries } = await getFiltersData();
+
+            if (genres) {
+                fields.movieGenreField.options = genres.map((item) => ({
+                    value: item.id,
+                    label: item.genre,
+                }));
+            }
+
+            if (countries) {
+                fields.movieCountryField.options = countries.map((item) => ({
+                    value: item.id,
+                    label: item.country,
+                }));
+            }
+
+            // Обновление состояния чтобы перерисовать фильтры с новыми options
+            setFiltersData(prevState => ({
+                ...prevState,
+                ratingRange: [0, 10],
+            }));
+        };
+
+        fetchFiltersData();
+    }, []);
+
     return (
         <div className='movie-page'>
             <div className='movie-page__filters'>

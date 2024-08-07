@@ -1,4 +1,5 @@
-import {  MOVIE_TYPES } from '@/shared/composables/constants/constants';
+import { MOVIE_TYPES } from '@/shared/composables/constants/constants';
+// import { FiltersDataService } from '@/shared/composables/services/FiltersDataService.js';
 
 export const useMoviesFilters = () => {
     const typeOptions = [
@@ -14,21 +15,21 @@ export const useMoviesFilters = () => {
         type: 'select',
         value: null,
         options: typeOptions,
-    }
+    };
 
     const movieCountryField = {
         name: 'movieCountry',
         type: 'select',
         value: null,
-        options: typeOptions,
-    }
+        options: [],
+    };
 
     const movieGenreField = {
         name: 'movieGenre',
         type: 'select',
         value: null,
-        options: typeOptions,
-    }
+        options: [],
+    };
 
     const ratingRangeField = {
         name: 'ratingRange',
@@ -37,7 +38,7 @@ export const useMoviesFilters = () => {
         min: 0,
         max: 10,
         placeholder: 'Rating Range',
-    }
+    };
 
     const yearRangeField = {
         name: 'yearRange',
@@ -46,7 +47,7 @@ export const useMoviesFilters = () => {
         min: 1980,
         max: 2024,
         placeholder: 'Year of Release',
-    }
+    };
 
     const allFields = [
         moviesTypeField,
@@ -56,6 +57,7 @@ export const useMoviesFilters = () => {
         yearRangeField,
     ];
 
+
     return {
         allFields,
         fields: {
@@ -64,13 +66,6 @@ export const useMoviesFilters = () => {
             movieGenreField,
             ratingRangeField,
             yearRangeField,
-        }
+        },
     };
 };
-
-
-
-
-
-
-
